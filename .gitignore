@@ -1,5 +1,27 @@
 *.class
-nb-*
+*.exe
+*~
+/*.*~
+/build/*
+/.classpath
+/.gradle/*
+/**/build/*
+/.project
+/.settings/org.eclipse.jdt.core.prefs
+/**/.classpath
+/**/.project
+/**/.settings/*
+/**/.externalToolBuilders/*
+/**/*.class
+/**/target/*
+/**/bin/*
+*.log
+/**/*.log
+nb*
+/**/nb-configuration.xml
+.nb-gradle
+/.idea/*
+*.iml
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
