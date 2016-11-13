@@ -19,12 +19,12 @@
 		</layout>
 	</appender>
 
- 	<logger name="splunk=br.com.uol.egw">
+ 	<logger name="splunk=br.com.ppm">
 		<level value="DEBUG" />
 		<appender-ref ref="splunk" />
 	</logger>
 	
-	<logger name="br.com.uol.egw">
+	<logger name="br.com.ppm">
 		<level value="DEBUG" />
 		<appender-ref ref="file" />
 	</logger>
