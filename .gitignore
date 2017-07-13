@@ -18,6 +18,7 @@
 *.log
 /**/*.log
 nb*
+.nb*
 /**/nb-configuration.xml
 /.idea/*
 *.iml
