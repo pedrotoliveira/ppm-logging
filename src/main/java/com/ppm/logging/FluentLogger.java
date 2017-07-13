@@ -32,13 +32,6 @@ public interface FluentLogger {
     LogOperations all();
 
     /**
-     * Invoke Perf4J Logger Operations
-     *
-     * @return Perf4JOperations
-     */
-    Perf4JOperations perf4j();
-
-    /**
      * Invoke File Logger Operations
      *
      * @return

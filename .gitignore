@@ -18,11 +18,11 @@
 *.log
 /**/*.log
 nb*
+.nb*
 /**/nb-configuration.xml
-.nb-gradle
 /.idea/*
 *.iml
-*.nb-gradle/
+*.nb-gradle/*
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

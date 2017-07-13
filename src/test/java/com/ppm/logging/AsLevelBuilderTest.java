@@ -1,18 +1,15 @@
 package com.ppm.logging;
 
-import static org.mockito.Mockito.atLeastOnce;
-import static org.mockito.Mockito.atMost;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.mockito.Mockito.*;
 
 /**
  * Unit tests of class AsLevelBuilder
@@ -25,7 +22,7 @@ public class AsLevelBuilderTest {
 
     private AsLevelBuilder builder;
 
-    private Map<String, Object> logData = new HashMap<String, Object>();
+    private Map<String, Object> logData = new HashMap<>();
     @Mock
     private FileLogger fileLoggerDelegate;
     @Mock
@@ -45,7 +42,7 @@ public class AsLevelBuilderTest {
     }
 
     /**
-     * Test method for {@link com.ppm..util.logging.AsLevelBuilder#asInfo()}.
+     * Test method for {@link com.ppm.logging.AsLevelBuilder#asInfo()}.
      */
     @Test
     public final void testAsInfo() {
@@ -56,7 +53,7 @@ public class AsLevelBuilderTest {
     }
 
     /**
-     * Test method for {@link com.ppm..util.logging.AsLevelBuilder#asWarn()}.
+     * Test method for {@link com.ppm.logging.AsLevelBuilder#asWarn()}.
      */
     @Test
     public final void testAsWarn() {
@@ -67,7 +64,7 @@ public class AsLevelBuilderTest {
     }
 
     /**
-     * Test method for {@link com.ppm..util.logging.AsLevelBuilder#asError()}.
+     * Test method for {@link com.ppm.logging.AsLevelBuilder#asError()}.
      */
     @Test
     public final void testAsError() {
@@ -78,7 +75,7 @@ public class AsLevelBuilderTest {
     }
 
     /**
-     * Test method for {@link com.ppm..util.logging.AsLevelBuilder#asDebug()}.
+     * Test method for {@link com.ppm.logging.AsLevelBuilder#asDebug()}.
      */
     @Test
     public final void testAsDebug() {
