@@ -27,10 +27,7 @@ import org.apache.logging.log4j.LogManager;
  */
 public class LoggerHolder implements LogOperations {
 
-    private final Perf4jDelegate perf4jDelegate;
-
     private final FileLoggerDelegate fileLoggerDelegate;
-
     private final SplunkLoggerDelegate splunkLoggerDelegate;
 
     /**
@@ -38,16 +35,8 @@ public class LoggerHolder implements LogOperations {
      * @param clazz
      */
     public LoggerHolder(final Class<?> clazz) {
-        this.perf4jDelegate = Perf4jDelegate.create(LogManager.getLogger("perf4j=" + clazz.getName()));
         this.splunkLoggerDelegate = SplunkLoggerDelegate.create(LogManager.getLogger("splunk=" + clazz.getName()));
         this.fileLoggerDelegate = FileLoggerDelegate.create(LogManager.getLogger(clazz));
-    }
-
-    /**
-     * @return the perf4jDelegate
-     */
-    Perf4jDelegate getPerf4jDelegate() {
-        return perf4jDelegate;
     }
 
     /**

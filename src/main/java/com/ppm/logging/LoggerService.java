@@ -48,11 +48,6 @@ public class LoggerService implements FluentLogger {
     }
 
     @Override
-    public Perf4JOperations perf4j() {
-        return holder.getPerf4jDelegate();
-    }
-
-    @Override
     public FileLogger file() {
         return holder.getFileLoggerDelegate();
     }

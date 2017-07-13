@@ -1,20 +1,20 @@
 package com.ppm.logging;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.atLeastOnce;
-import static org.mockito.Mockito.verify;
-
-import java.util.HashMap;
-import java.util.Map;
 import org.apache.logging.log4j.core.Logger;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.verify;
 
 /**
  * Unit Test of LogDataBuilder
@@ -27,7 +27,7 @@ public class LogDataBuilderTest {
 
     private LogDataBuilder builder;
 
-    private Map<String, Object> logData = new HashMap<String, Object>();
+    private Map<String, Object> logData = new HashMap<>();
     @Mock
     private Logger logger;
 
