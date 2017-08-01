@@ -20,11 +20,13 @@
 nb*
 .nb*
 /**/nb-configuration.xml
-/.idea/*
-*.iml
+.nb-gradle
 .nb-gradle*
 .nb-gradle/*
 *.nb-gradle/*
+
+/.idea/*
+*.iml
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
