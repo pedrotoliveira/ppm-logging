@@ -22,6 +22,7 @@ nb*
 /**/nb-configuration.xml
 /.idea/*
 *.iml
+.nb-gradle*
 .nb-gradle/*
 *.nb-gradle/*
 
