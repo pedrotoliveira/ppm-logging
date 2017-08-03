@@ -1,24 +1,64 @@
 apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'signing'
 
-sourceCompatibility = '1.8'
+apply from: 'deploy.gradle'
+
+group ='br.com.ppm'
+archivesBaseName = 'ppm-logging'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 repositories {
-    mavenCentral()
+	mavenLocal()
+	mavenCentral()
+}
+
+jar {
+    baseName = archivesBaseName
+    version =  version
 }
 
 dependencies {
     compile (
-        [group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.3'],
-        [group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.3']
+        [group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.7'],
+        [group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.7']
     )
     
     testCompile(
-        [group: 'junit', name: 'junit', version: '4.10'],
-        [group: 'org.mockito', name:'mockito-all', version:'1.8.4']
+        [group: 'junit', name: 'junit', version: '4.12'],
+        [group: 'org.mockito', name:'mockito-all', version:'1.10.19']
     )
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.4'
+    gradleVersion = '4.0.2'
+}
+
+buildscript {
+	repositories {
+        mavenCentral()
+        //Needed only for SNAPSHOT versions
+        maven {
+			url "http://oss.sonatype.org/content/repositories/snapshots/"
+		}
+    }
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
 }
