@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * Holder of AsLevel
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  *
  */
 public class AsLevelBuilder implements AsLevel {

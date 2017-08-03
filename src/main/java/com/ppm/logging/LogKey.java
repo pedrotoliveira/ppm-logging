@@ -17,9 +17,9 @@
 package com.ppm.logging;
 
 /**
- * Spkunk Log Key
+ * Log Key Interface
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  *
  */
 public interface LogKey {

@@ -19,7 +19,7 @@ package com.ppm.logging;
 /**
  * Represents a bunch of log data.
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  */
 public interface LogData extends AsLevel {
 

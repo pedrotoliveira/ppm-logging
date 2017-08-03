@@ -19,7 +19,7 @@ package com.ppm.logging;
 /**
  * Interface that contains methods "as some log level" to use in a fluent way.
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  *
  */
 public interface AsLevel {

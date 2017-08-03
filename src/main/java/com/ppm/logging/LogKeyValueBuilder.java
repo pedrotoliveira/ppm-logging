@@ -21,7 +21,7 @@ import org.apache.logging.log4j.Logger;
 /**
  * LogKeyValue Builder
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  *
  */
 public final class LogKeyValueBuilder implements LogKey, RecursiveLogKey {

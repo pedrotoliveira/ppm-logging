@@ -19,7 +19,7 @@ package com.ppm.logging;
 /**
  * Splunk Logger Operations
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  *
  */
 public interface SplunkLogger extends LogOperations {

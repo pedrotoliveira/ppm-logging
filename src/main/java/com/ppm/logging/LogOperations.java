@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * Common Log Operations
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  *
  */
 public interface LogOperations {

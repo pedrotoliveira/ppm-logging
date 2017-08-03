@@ -23,7 +23,7 @@ import org.apache.logging.log4j.Logger;
 /**
  * The Log Data Builder
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  *
  */
 public class LogDataBuilder implements LogData {
