@@ -21,7 +21,7 @@ import java.util.Objects;
 /**
  * Implements FluentLogger
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  */
 public class LoggerService implements FluentLogger {
 

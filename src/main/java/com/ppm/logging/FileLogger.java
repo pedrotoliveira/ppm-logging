@@ -21,44 +21,43 @@ import java.util.Map;
 /**
  * The Simple File Logger Interface.
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
- *
+ * @author Pedro T. Oliveira
  */
 public interface FileLogger extends LogOperations {
 
     /**
      *
-     * @param message
-     * @param t
+     * @param message log message
+     * @param t exception
      */
     void logInfo(final Object message, final Throwable t);
 
     /**
      *
-     * @param message
-     * @param t
+     * @param message log message
+     * @param t exception
      */
     void logWarn(final Object message, final Throwable t);
 
     /**
      *
-     * @param message
-     * @param t
+     * @param message log message
+     * @param t exception
      */
     void logError(final Object message, final Throwable t);
 
     /**
      *
-     * @param message
-     * @param t
+     * @param message log message
+     * @param t exception
      */
     void logDebug(final Object message, final Throwable t);
 
     /**
      *
-     * @param logData
-     * @param t
-     * @return
+     * @param logData Map key-value with log data
+     * @param t exception
+     * @return a LogData
      */
     LogData logData(final Map<String, Object> logData, final Throwable t);
 }

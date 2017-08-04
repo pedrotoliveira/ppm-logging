@@ -22,7 +22,7 @@ import org.apache.logging.log4j.Logger;
 /**
  * Splunk Logger Delegate
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  *
  */
 public class SplunkLoggerDelegate implements SplunkLogger {

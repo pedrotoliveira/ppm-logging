@@ -19,7 +19,7 @@ package com.ppm.commons.logging;
 /**
  * Severity types for logging.
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  */
 public enum Severity {
 

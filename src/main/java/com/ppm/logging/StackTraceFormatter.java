@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.ppm.commons.logging;
+package com.ppm.logging;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -22,13 +22,10 @@ import java.io.PrintStream;
 
 /**
  *
- * @author Pedro T. Oliveira <pedro.oliveira.nom.br>
+ * @author Pedro T. Oliveira
  */
 public class StackTraceFormatter {
 
-	/**
-	 * Padrões de formatação das StackTraces em String.
-	 */
 	public enum Format {
 
 		/**

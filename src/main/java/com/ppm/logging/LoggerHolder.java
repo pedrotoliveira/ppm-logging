@@ -22,7 +22,7 @@ import org.apache.logging.log4j.LogManager;
 /**
  * Logger Holder
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  *
  */
 public class LoggerHolder implements LogOperations {

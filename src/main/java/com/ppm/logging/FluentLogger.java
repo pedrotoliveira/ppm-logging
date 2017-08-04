@@ -19,7 +19,7 @@ package com.ppm.logging;
 /**
  * Fluent logger is a interface that encapsulates common log operations to be used in a fluent way.
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  * @see LoggerService
  */
 public interface FluentLogger {

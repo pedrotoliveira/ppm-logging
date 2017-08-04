@@ -19,7 +19,7 @@ package com.ppm.logging;
 /**
  * LogKeyValueBuilderHolder holds multiples builders.
  *
- * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
+ * @author Pedro T. Oliveira
  *
  */
 public class LogKeyValueBuilderHolder implements LogKey, RecursiveLogKey {
