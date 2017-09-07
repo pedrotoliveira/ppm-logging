@@ -24,9 +24,9 @@ package com.ppm.logging;
 public interface LogData extends AsLevel {
 
     /**
-     * Retrieve holded data as String.
+     * Retrieve data as String.
      *
-     * @return
+     * @return The data.
      */
     String getData();
 }

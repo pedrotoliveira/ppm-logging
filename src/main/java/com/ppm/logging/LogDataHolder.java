@@ -26,7 +26,7 @@ public class LogDataHolder implements LogData {
 
     private final Map<String, Object> logData;
     private final FileLogger fileLoggerDelegate;
-    private final SplunkLogger splunkLoggerDelegate;
+    private final RemoteLogger splunkLoggerDelegate;
 
     /**
      *
@@ -34,7 +34,7 @@ public class LogDataHolder implements LogData {
      * @param fileLoggerDelegate
      * @param splunkLoggerDelegate
      */
-    public LogDataHolder(final Map<String, Object> logData, FileLogger fileLoggerDelegate, SplunkLogger splunkLoggerDelegate) {
+    public LogDataHolder(final Map<String, Object> logData, FileLogger fileLoggerDelegate, RemoteLogger splunkLoggerDelegate) {
         super();
         this.logData = logData;
         this.fileLoggerDelegate = fileLoggerDelegate;

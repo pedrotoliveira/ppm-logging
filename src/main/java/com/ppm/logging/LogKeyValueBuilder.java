@@ -35,10 +35,11 @@ public final class LogKeyValueBuilder implements LogKey, RecursiveLogKey {
     }
 
     /**
+     * Create a LogKeyValueBuilder
      *
-     * @param logger
-     * @param key
-     * @return
+     * @param logger internal Logger
+     * @param key Key
+     * @return a LogKeyValueBuilder
      */
     protected static LogKeyValueBuilder create(final Logger logger, final String key) {
         return (key.contains("=")) ? new LogKeyValueBuilder(logger, key) : new LogKeyValueBuilder(logger, key + "=");

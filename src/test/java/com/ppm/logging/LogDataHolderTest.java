@@ -22,7 +22,7 @@ public class LogDataHolderTest {
     private Map<String, Object> logData = new HashMap<String, Object>();
 
     @Mock
-    private SplunkLogger splunkLoggerDelegate;
+    private RemoteLogger splunkLoggerDelegate;
     @Mock
     private FileLogger fileLoggerDelegate;
     @Mock

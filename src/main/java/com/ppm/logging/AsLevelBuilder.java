@@ -28,7 +28,7 @@ public class AsLevelBuilder implements AsLevel {
 
     private final Map<String, Object> logData;
     private final FileLogger fileLoggerDelegate;
-    private final SplunkLogger splunkLoggerDelegate;
+    private final RemoteLogger splunkLoggerDelegate;
 
     /**
      *
@@ -37,7 +37,7 @@ public class AsLevelBuilder implements AsLevel {
      * @param splunkLoggerDelegate
      */
     public AsLevelBuilder(Map<String, Object> logData, FileLogger fileLoggerDelegate,
-            SplunkLogger splunkLoggerDelegate) {
+            RemoteLogger splunkLoggerDelegate) {
         super();
         this.logData = logData;
         this.fileLoggerDelegate = fileLoggerDelegate;

@@ -27,21 +27,21 @@ public interface FluentLogger {
     /**
      * Invoke Operations in all loggers
      *
-     * @return
+     * @return All Message Builders
      */
     LogOperations all();
 
     /**
      * Invoke File Logger Operations
      *
-     * @return
+     * @return File Logger Message Builder
      */
     FileLogger file();
 
     /**
-     * Invoke Splunk Logger Operations
+     * Invoke Remote Logger Operations
      *
-     * @return
+     * @return Remote Logger Message Builder
      */
-    SplunkLogger splunk();
+    RemoteLogger remote();
 }

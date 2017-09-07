@@ -34,7 +34,7 @@ public class LogKeyValueBuilderHolder implements LogKey, RecursiveLogKey {
      * @param fileLoggerDelegate
      * @param splunkLoggerDelegate
      */
-    public LogKeyValueBuilderHolder(final String key, final FileLogger fileLoggerDelegate, final SplunkLogger splunkLoggerDelegate) {
+    public LogKeyValueBuilderHolder(final String key, final FileLogger fileLoggerDelegate, final RemoteLogger splunkLoggerDelegate) {
         this.fileLogKeyValue = (LogKeyValueBuilder) fileLoggerDelegate.logKey(key);
         this.splunkLogKeyvalue = (LogKeyValueBuilder) splunkLoggerDelegate.logKey(key);
     }

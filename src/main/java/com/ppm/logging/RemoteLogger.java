@@ -17,11 +17,10 @@
 package com.ppm.logging;
 
 /**
- * Splunk Logger Operations
+ * Remote Logger Operations
  *
  * @author Pedro T. Oliveira
  *
  */
-public interface SplunkLogger extends LogOperations {
-
+public interface RemoteLogger extends LogOperations {
 }

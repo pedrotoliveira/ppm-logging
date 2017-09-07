@@ -17,6 +17,7 @@
 package com.ppm.logging;
 
 import java.util.Map;
+
 import org.apache.logging.log4j.LogManager;
 
 /**
@@ -28,14 +29,14 @@ import org.apache.logging.log4j.LogManager;
 public class LoggerHolder implements LogOperations {
 
     private final FileLoggerDelegate fileLoggerDelegate;
-    private final SplunkLoggerDelegate splunkLoggerDelegate;
+    private final RemoteLoggerDelegate splunkLoggerDelegate;
 
     /**
      *
      * @param clazz
      */
     public LoggerHolder(final Class<?> clazz) {
-        this.splunkLoggerDelegate = SplunkLoggerDelegate.create(LogManager.getLogger("splunk=" + clazz.getName()));
+        this.splunkLoggerDelegate = RemoteLoggerDelegate.create(LogManager.getLogger("splunk=" + clazz.getName()));
         this.fileLoggerDelegate = FileLoggerDelegate.create(LogManager.getLogger(clazz));
     }
 
@@ -49,7 +50,7 @@ public class LoggerHolder implements LogOperations {
     /**
      * @return the splunkLoggerDelegate
      */
-    SplunkLoggerDelegate getSplunkLoggerDelegate() {
+    RemoteLoggerDelegate getSplunkLoggerDelegate() {
         return splunkLoggerDelegate;
     }
 

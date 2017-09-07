@@ -53,7 +53,7 @@ public class LoggerService implements FluentLogger {
     }
 
     @Override
-    public SplunkLogger splunk() {
+    public RemoteLogger remote() {
         return holder.getSplunkLoggerDelegate();
     }
 }

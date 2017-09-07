@@ -17,6 +17,7 @@
 package com.ppm.logging;
 
 import java.util.Map;
+
 import org.apache.logging.log4j.Logger;
 
 /**
@@ -25,21 +26,22 @@ import org.apache.logging.log4j.Logger;
  * @author Pedro T. Oliveira
  *
  */
-public class SplunkLoggerDelegate implements SplunkLogger {
+public class RemoteLoggerDelegate implements RemoteLogger {
 
     private final Logger logger;
 
-    private SplunkLoggerDelegate(final Logger logger) {
+    private RemoteLoggerDelegate(final Logger logger) {
         this.logger = logger;
     }
 
     /**
+     * Create a new Remote Logger Delegate
      *
      * @param logger
-     * @return
+     * @return the RemoteLoggerDelegate
      */
-    protected static final SplunkLoggerDelegate create(final Logger logger) {
-        return new SplunkLoggerDelegate(logger);
+    protected static final RemoteLoggerDelegate create(final Logger logger) {
+        return new RemoteLoggerDelegate(logger);
     }
 
     @Override

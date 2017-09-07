@@ -11,14 +11,14 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 /**
- * Unit tests of class SplunkLoggerDelegate
+ * Unit tests of class RemoteLoggerDelegate
  *
  * @author Pedro T. Oliveira <pedro.oliveira20@gmail.com>
  */
 @RunWith(MockitoJUnitRunner.class)
-public class SplunkLoggerDelegateTest {
+public class RemoteLoggerDelegateTest {
 
-    private SplunkLoggerDelegate delegate;
+    private RemoteLoggerDelegate delegate;
 
     private Object message;
 
@@ -31,7 +31,7 @@ public class SplunkLoggerDelegateTest {
     @Before
     public void setUp() throws Exception {
         this.message = Object.class.cast("Something to log");
-        this.delegate = SplunkLoggerDelegate.create(logger);
+        this.delegate = RemoteLoggerDelegate.create(logger);
     }
 
     @Test

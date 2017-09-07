@@ -17,6 +17,7 @@
 package com.ppm.logging;
 
 import java.util.Map;
+
 import org.apache.logging.log4j.Logger;
 
 /**
@@ -36,7 +37,7 @@ public final class FileLoggerDelegate implements FileLogger {
     /**
      *
      * @param logger
-     * @return
+     * @return The FileLoggerDelegate
      */
     protected static FileLoggerDelegate create(final Logger logger) {
         return new FileLoggerDelegate(logger);

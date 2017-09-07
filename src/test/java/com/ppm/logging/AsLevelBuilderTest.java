@@ -26,7 +26,7 @@ public class AsLevelBuilderTest {
     @Mock
     private FileLogger fileLoggerDelegate;
     @Mock
-    private SplunkLogger splunkLoggerDelegate;
+    private RemoteLogger splunkLoggerDelegate;
     @Mock
     private LogData value;
 
