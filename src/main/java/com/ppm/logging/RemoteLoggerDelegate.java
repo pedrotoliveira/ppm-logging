@@ -22,72 +22,56 @@ import java.util.Map;
 import org.apache.logging.log4j.Logger;
 
 /**
- * File Logger Delegate
+ * Splunk Logger Delegate
  *
  * @author Pedro T. Oliveira
  *
  */
-public final class FileLoggerDelegate implements FileLogger {
+public class RemoteLoggerDelegate implements RemoteLogger {
 
     private final Logger logger;
 
-    private FileLoggerDelegate(final Logger logger) {
+    private RemoteLoggerDelegate(final Logger logger) {
         this.logger = logger;
     }
 
     /**
+     * Create a new Remote Logger Delegate
      *
      * @param logger
-     * @return The FileLoggerDelegate
+     * @return the RemoteLoggerDelegate
      */
-    protected static FileLoggerDelegate create(final Logger logger) {
-        return new FileLoggerDelegate(logger);
+    protected static final RemoteLoggerDelegate create(final Logger logger) {
+        return new RemoteLoggerDelegate(logger);
     }
 
+    @Override
     public void logInfo(Object message) {
-        logger.info(message);
+        this.logger.info(message);
     }
 
+    @Override
     public void logWarn(Object message) {
-        logger.warn(message);
+        this.logger.warn(message);
     }
 
+    @Override
     public void logError(Object message) {
-        logger.error(message);
+        this.logger.error(message);
     }
 
+    @Override
     public void logDebug(Object message) {
-        logger.debug(message);
-    }
-
-    public void logInfo(Object message, Throwable t) {
-        logger.info(message, t);
-    }
-
-    public void logWarn(Object message, Throwable t) {
-        logger.warn(message, t);
+        this.logger.debug(message);
     }
 
     @Override
-    public void logError(Object message, Throwable t) {
-        logger.error(message, t);
-    }
-
-    @Override
-    public void logDebug(Object message, Throwable t) {
-        logger.debug(message, t);
-    }
-
-    public LogData logData(Map<String, Object> logData) {
-        return new LogDataBuilder(logger, logData);
-    }
-
-    @Override
-    public LogData logData(Map<String, Object> logData, Throwable t) {
-        return new LogDataBuilder(logger, logData, t);
-    }
-
     public LogKey logKey(String key) {
-        return LogKeyValueBuilder.create(logger, key);
+        return LogKeyValueBuilder.create(this.logger, key);
+    }
+
+    @Override
+    public LogData logData(final Map<String, Object> logData) {
+        return new LogDataBuilder(this.logger, logData);
     }
 }
