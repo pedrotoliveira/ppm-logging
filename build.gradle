@@ -26,7 +26,23 @@ jar {
 dependencies {
     compile (
         [group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.9.0'],
-        [group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.9.0']
+        [group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.9.0'],
+        //Apache Commons Logging Bridge
+        [group: 'org.apache.logging.log4j', name: 'log4j-jcl', version: '2.9.0'],
+        //Java Util Logging Adapter
+        [group: 'org.apache.logging.log4j', name: 'log4j-jul', version: '2.9.0'],
+        //SL4J Bridge
+        [group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.9.0'],
+        //Web Servlet Support
+        [group: 'org.apache.logging.log4j', name: 'log4j-web', version: '2.9.0'],
+        //Apache Flume Appender
+        [group: 'org.apache.logging.log4j', name: 'log4j-flume-ng', version: '2.9.0'],
+        //Log4j to SLF4J Adapter
+        [group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: '2.9.0'],
+        //NoSQL Appenders
+        [group: 'org.apache.logging.log4j', name: 'log4j-nosql', version: '2.9.0'],
+        //IO Streams
+        [ group: 'org.apache.logging.log4j', name: 'log4j-iostreams', version: '2.9.0']
     )
     
     testCompile(
@@ -45,7 +61,7 @@ buildscript {
         //Needed only for SNAPSHOT versions
         maven {
 			url "http://oss.sonatype.org/content/repositories/snapshots/"
-		}
+		}       
     }
 }
 

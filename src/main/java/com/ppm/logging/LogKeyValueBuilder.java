@@ -61,9 +61,10 @@ public final class LogKeyValueBuilder implements LogKey, RecursiveLogKey {
     }
 
     /**
+     * Construct a Key with '=' if not present.
      *
-     * @param key
-     * @return
+     * @param key a String
+     * @return a LogKey
      */
     public LogKey changeKey(String key) {
         this.key = (key.contains("=")) ? key : key + "=";
