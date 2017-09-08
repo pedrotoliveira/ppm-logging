@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -29,20 +29,20 @@ public class AsLevelBuilder implements AsLevel {
 
     private final Map<String, Object> logData;
     private final FileLogger fileLoggerDelegate;
-    private final RemoteLogger splunkLoggerDelegate;
+    private final RemoteLogger remoteLoggerDelegate;
 
     /**
      *
      * @param logData
      * @param fileLoggerDelegate
-     * @param splunkLoggerDelegate
+     * @param remoteLoggerDelegate
      */
     public AsLevelBuilder(Map<String, Object> logData, FileLogger fileLoggerDelegate,
-            RemoteLogger splunkLoggerDelegate) {
+            RemoteLogger remoteLoggerDelegate) {
         super();
         this.logData = logData;
         this.fileLoggerDelegate = fileLoggerDelegate;
-        this.splunkLoggerDelegate = splunkLoggerDelegate;
+        this.remoteLoggerDelegate = remoteLoggerDelegate;
     }
 
     /*
@@ -53,7 +53,7 @@ public class AsLevelBuilder implements AsLevel {
     @Override
     public AsLevel asInfo() {
         fileLoggerDelegate.logData(logData).asInfo();
-        splunkLoggerDelegate.logData(logData).asInfo();
+        remoteLoggerDelegate.logData(logData).asInfo();
         return this;
     }
 
@@ -65,7 +65,7 @@ public class AsLevelBuilder implements AsLevel {
     @Override
     public AsLevel asWarn() {
         fileLoggerDelegate.logData(logData).asWarn();
-        splunkLoggerDelegate.logData(logData).asWarn();
+        remoteLoggerDelegate.logData(logData).asWarn();
         return this;
     }
 
@@ -77,7 +77,7 @@ public class AsLevelBuilder implements AsLevel {
     @Override
     public AsLevel asError() {
         fileLoggerDelegate.logData(logData).asError();
-        splunkLoggerDelegate.logData(logData).asError();
+        remoteLoggerDelegate.logData(logData).asError();
         return this;
     }
 
@@ -89,7 +89,7 @@ public class AsLevelBuilder implements AsLevel {
     @Override
     public AsLevel asDebug() {
         fileLoggerDelegate.logData(logData).asDebug();
-        splunkLoggerDelegate.logData(logData).asDebug();
+        remoteLoggerDelegate.logData(logData).asDebug();
         return this;
     }
 }

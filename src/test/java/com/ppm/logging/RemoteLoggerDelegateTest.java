@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -18,14 +18,13 @@
 package com.ppm.logging;
 
 import org.apache.logging.log4j.core.Logger;
-import static org.mockito.Mockito.atLeastOnce;
-import static org.mockito.Mockito.verify;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import static org.mockito.Mockito.*;
 
 /**
  * Unit tests of class RemoteLoggerDelegate
@@ -48,45 +47,45 @@ public class RemoteLoggerDelegateTest {
     @Before
     public void setUp() throws Exception {
         this.message = Object.class.cast("Something to log");
-        this.delegate = RemoteLoggerDelegate.create(logger);
+        this.delegate = new RemoteLoggerDelegate(logger);
     }
 
     @Test
     public final void testLogInfo() {
-        delegate.logInfo(message);
+        delegate.info(message);
         verify(logger, atLeastOnce()).info(message);
     }
 
     @Test
     public final void testLogWarn() {
-        delegate.logWarn(message);
+        delegate.warn(message);
         verify(logger, atLeastOnce()).warn(message);
     }
 
     @Test
     public final void testLogDebug() {
-        delegate.logDebug(message);
+        delegate.debug(message);
         verify(logger, atLeastOnce()).debug(message);
     }
 
     @Test
     public final void testLogError() {
-        delegate.logError(message);
+        delegate.error(message);
         verify(logger, atLeastOnce()).error(message);
     }
 
     @Test
     public final void testLogKeyValue() {
-        delegate.logKey("key=").value("value").asInfo();
+        delegate.key("key=").value("value").asInfo();
         verify(logger, atLeastOnce()).info("key=value ");
 
-        delegate.logKey("key=").value("value").asDebug();
+        delegate.key("key=").value("value").asDebug();
         verify(logger, atLeastOnce()).debug("key=value ");
 
-        delegate.logKey("key=").value("value").asWarn();
+        delegate.key("key=").value("value").asWarn();
         verify(logger, atLeastOnce()).warn("key=value ");
 
-        delegate.logKey("key=").value("value").asError();
+        delegate.key("key=").value("value").asError();
         verify(logger, atLeastOnce()).error("key=value ");
     }
 

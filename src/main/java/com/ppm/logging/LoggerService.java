@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -46,6 +46,11 @@ public class LoggerService implements FluentLogger {
     @Override
     public LogOperations all() {
         return holder;
+    }
+
+    @Override
+    public ConsoleLogger console() {
+        return holder.getConsoleLoggerDelegate();
     }
 
     @Override

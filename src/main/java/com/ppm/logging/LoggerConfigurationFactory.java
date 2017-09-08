@@ -58,7 +58,6 @@ public class LoggerConfigurationFactory extends ConfigurationFactory {
 
     @Override
     public Configuration getConfiguration(LoggerContext loggerContext, ConfigurationSource source) {
-
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -72,8 +71,8 @@ public class LoggerConfigurationFactory extends ConfigurationFactory {
         configBuilder.setStatusLevel(rootLevel);
         configBuilder.add(createThresholdFilter(configBuilder, rootLevel));
 
-        AppenderComponentBuilder consoleAppenderComponentBuilder = configBuilder.newAppender("Console", ConsoleAppender.PLUGIN_NAME);
-        consoleAppenderComponentBuilder.addAttribute("target", ConsoleAppender.Target.SYSTEM_OUT);
+        AppenderComponentBuilder consoleAppenderBuilder = configBuilder.newAppender("Console", ConsoleAppender.PLUGIN_NAME);
+        consoleAppenderBuilder.addAttribute("target", ConsoleAppender.Target.SYSTEM_OUT);
 
 
         RootLoggerComponentBuilder rootLoggerBuilder = configBuilder.newRootLogger(rootLevel);

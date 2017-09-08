@@ -71,7 +71,7 @@ public class LogKeyValueBuilderTest {
     @Test(expected = NullPointerException.class)
     public final void testLogNullKey() {
         LogKeyValueBuilder builder = LogKeyValueBuilder.create(logger, "command");
-        builder.logKey(null).value("sei não").asDebug();
+        builder.key(null).value("sei não").asDebug();
     }
 
     @Test

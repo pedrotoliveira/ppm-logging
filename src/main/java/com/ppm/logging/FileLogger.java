@@ -23,4 +23,6 @@ package com.ppm.logging;
  * @author Pedro T. Oliveira
  */
 public interface FileLogger extends LogOperations, ConsoleLogger {
+
+    String FILE_LOGGER_PREFIX = "file-";
 }

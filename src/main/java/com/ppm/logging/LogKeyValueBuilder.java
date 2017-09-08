@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -46,6 +46,7 @@ public final class LogKeyValueBuilder implements LogKey, RecursiveLogKey {
         return (key.contains("=")) ? new LogKeyValueBuilder(logger, key) : new LogKeyValueBuilder(logger, key + "=");
     }
 
+    @Override
     public RecursiveLogKey value(final Object msg) {
         return keyValue.setValue(key, msg);
     }
@@ -57,7 +58,8 @@ public final class LogKeyValueBuilder implements LogKey, RecursiveLogKey {
         return key;
     }
 
-    public LogKey logKey(String key) {
+    @Override
+    public LogKey key(String key) {
         return changeKey(key);
     }
 
@@ -72,18 +74,22 @@ public final class LogKeyValueBuilder implements LogKey, RecursiveLogKey {
         return this;
     }
 
+    @Override
     public AsLevel asInfo() {
         return keyValue.asInfo();
     }
 
+    @Override
     public AsLevel asWarn() {
         return keyValue.asWarn();
     }
 
+    @Override
     public AsLevel asError() {
         return keyValue.asError();
     }
 
+    @Override
     public AsLevel asDebug() {
         return keyValue.asDebug();
     }

@@ -76,7 +76,7 @@ public class KeyValue implements RecursiveLogKey {
         return this;
     }
 
-    public LogKey logKey(String key) {
+    public LogKey key(String key) {
         return builder.changeKey(key);
     }
 

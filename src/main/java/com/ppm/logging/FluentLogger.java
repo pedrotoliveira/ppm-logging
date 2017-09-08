@@ -32,6 +32,12 @@ public interface FluentLogger {
      */
     LogOperations all();
 
+    /**
+     * Invoke Console Logger Operations
+     *
+     * @return Console Logger Message Builder
+     */
+    ConsoleLogger console();
 
     /**
      * Invoke File Logger Operations

@@ -31,5 +31,5 @@ public interface RecursiveLogKey extends AsLevel {
      * @param key key value. Can be formated with "=" or without it.
      * @return SplunkLogKey
      */
-    LogKey logKey(final String key);
+    LogKey key(final String key);
 }

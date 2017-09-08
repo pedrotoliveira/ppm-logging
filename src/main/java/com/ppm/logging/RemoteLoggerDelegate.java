@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -19,10 +19,11 @@ package com.ppm.logging;
 
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * Splunk Logger Delegate
+ * Remote Logger Delegate
  *
  * @author Pedro T. Oliveira
  *
@@ -31,7 +32,7 @@ public class RemoteLoggerDelegate implements RemoteLogger {
 
     private final Logger logger;
 
-    private RemoteLoggerDelegate(final Logger logger) {
+    RemoteLoggerDelegate(final Logger logger) {
         this.logger = logger;
     }
 
@@ -41,37 +42,59 @@ public class RemoteLoggerDelegate implements RemoteLogger {
      * @param logger
      * @return the RemoteLoggerDelegate
      */
-    protected static final RemoteLoggerDelegate create(final Logger logger) {
-        return new RemoteLoggerDelegate(logger);
+    static final RemoteLoggerDelegate create(final Class<?> clazz) {
+        String loggerName = REMOTE_LOGGER_PREFIX + clazz.getName();
+        Logger remoteLogger = LogManager.getLogger(loggerName);
+        return new RemoteLoggerDelegate(remoteLogger);
     }
 
     @Override
-    public void logInfo(Object message) {
-        this.logger.info(message);
+    public RemoteLogger info(Object message) {
+        logger.info(message);
+        return this;
     }
 
     @Override
-    public void logWarn(Object message) {
-        this.logger.warn(message);
+    public RemoteLogger warn(Object message) {
+        logger.warn(message);
+        return this;
     }
 
     @Override
-    public void logError(Object message) {
-        this.logger.error(message);
+    public RemoteLogger error(Object message) {
+        logger.error(message);
+        return this;
     }
 
     @Override
-    public void logDebug(Object message) {
-        this.logger.debug(message);
+    public RemoteLogger debug(Object message) {
+        logger.debug(message);
+        return this;
     }
 
     @Override
-    public LogKey logKey(String key) {
+    public LogOperations fatal(Object message) {
+        logger.fatal(message);
+        return this;
+    }
+
+    @Override
+    public LogKey key(String key) {
         return LogKeyValueBuilder.create(this.logger, key);
     }
 
     @Override
     public LogData logData(final Map<String, Object> logData) {
         return new LogDataBuilder(this.logger, logData);
+    }
+
+    @Override
+    public LogData log(Object object) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public LogData log(Object object, LogPatterns pattern) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
