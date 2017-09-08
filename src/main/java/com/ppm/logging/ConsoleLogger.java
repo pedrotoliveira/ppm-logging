@@ -17,33 +17,47 @@
  */
 package com.ppm.logging;
 
+import java.util.Map;
+
 /**
- * Fluent logger is a interface that encapsulates common log operations to be used in a fluent way.
  *
- * @author Pedro T. Oliveira
- * @see LoggerService
+ * @author pedrotoliveira
  */
-public interface FluentLogger {
+public interface ConsoleLogger {
 
     /**
-     * Invoke Operations in all loggers
      *
-     * @return All Message Builders
+     * @param message log message
+     * @param t exception
      */
-    LogOperations all();
-
-
-    /**
-     * Invoke File Logger Operations
-     *
-     * @return File Logger Message Builder
-     */
-    FileLogger file();
+    void logInfo(final Object message, final Throwable t);
 
     /**
-     * Invoke Remote Logger Operations
      *
-     * @return Remote Logger Message Builder
+     * @param message log message
+     * @param t exception
      */
-    RemoteLogger remote();
+    void logWarn(final Object message, final Throwable t);
+
+    /**
+     *
+     * @param message log message
+     * @param t exception
+     */
+    void logError(final Object message, final Throwable t);
+
+    /**
+     *
+     * @param message log message
+     * @param t exception
+     */
+    void logDebug(final Object message, final Throwable t);
+
+    /**
+     *
+     * @param logData Map key-value with log data
+     * @param t exception
+     * @return a LogData
+     */
+    LogData logData(final Map<String, Object> logData, final Throwable t);
 }

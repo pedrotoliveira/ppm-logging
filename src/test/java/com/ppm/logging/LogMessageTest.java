@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 pedrotoliveira
+ * Copyright (C) 2017 PPM Sistemas da Informacao LTDA
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,33 +17,48 @@
  */
 package com.ppm.logging;
 
+import org.junit.Before;
+import org.junit.Test;
+
 /**
- * Fluent logger is a interface that encapsulates common log operations to be used in a fluent way.
  *
- * @author Pedro T. Oliveira
- * @see LoggerService
+ * @author pedrotoliveira
  */
-public interface FluentLogger {
+public class LogMessageTest {
+
+    public LogMessageTest() {
+    }
+
+    @Before
+    public void setUp() {
+    }
 
     /**
-     * Invoke Operations in all loggers
-     *
-     * @return All Message Builders
+     * Test of getFormattedMessage method, of class LogMessage.
      */
-    LogOperations all();
-
-
-    /**
-     * Invoke File Logger Operations
-     *
-     * @return File Logger Message Builder
-     */
-    FileLogger file();
+    @Test
+    public void testGetFormattedMessage() {
+    }
 
     /**
-     * Invoke Remote Logger Operations
-     *
-     * @return Remote Logger Message Builder
+     * Test of getFormat method, of class LogMessage.
      */
-    RemoteLogger remote();
+    @Test
+    public void testGetFormat() {
+    }
+
+    /**
+     * Test of getParameters method, of class LogMessage.
+     */
+    @Test
+    public void testGetParameters() {
+    }
+
+    /**
+     * Test of getThrowable method, of class LogMessage.
+     */
+    @Test
+    public void testGetThrowable() {
+    }
+
 }

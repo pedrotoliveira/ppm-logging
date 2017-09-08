@@ -1,18 +1,19 @@
-/*
- * Copyright (c) - PPM Sistemas de Informacao LTDA, Todos os direitos reservados
+/* 
+ * Copyright (C) 2017 pedrotoliveira
  *
- * Este arquivo e uma propriedade confidencial da PPM Sistemas de Informacao LTDA.
- * Nenhuma parte do mesmo pode ser copiada, reproduzida, impressa ou transmitida
- * por qualquer meio sem autorizacao expressa e por escrito de um representante
- * legal da PPM Sistemas de Informacao LTDA.
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
  *
- * All rights reserved
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
  *
- * This file is a confidential property of PPM Sistemas de Informacao LTDA.
- * No part of this file may be reproduced or copied in any form or by any means
- * without written permisson from an authorized person from PPM Sistemas de Informacao
- * LTDA.
- *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 package com.ppm.logging;
 

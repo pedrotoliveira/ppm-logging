@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -44,26 +44,32 @@ public final class FileLoggerDelegate implements FileLogger {
         return new FileLoggerDelegate(logger);
     }
 
+    @Override
     public void logInfo(Object message) {
         logger.info(message);
     }
 
+    @Override
     public void logWarn(Object message) {
         logger.warn(message);
     }
 
+    @Override
     public void logError(Object message) {
         logger.error(message);
     }
 
+    @Override
     public void logDebug(Object message) {
         logger.debug(message);
     }
 
+    @Override
     public void logInfo(Object message, Throwable t) {
         logger.info(message, t);
     }
 
+    @Override
     public void logWarn(Object message, Throwable t) {
         logger.warn(message, t);
     }
@@ -78,6 +84,7 @@ public final class FileLoggerDelegate implements FileLogger {
         logger.debug(message, t);
     }
 
+    @Override
     public LogData logData(Map<String, Object> logData) {
         return new LogDataBuilder(logger, logData);
     }
@@ -87,6 +94,7 @@ public final class FileLoggerDelegate implements FileLogger {
         return new LogDataBuilder(logger, logData, t);
     }
 
+    @Override
     public LogKey logKey(String key) {
         return LogKeyValueBuilder.create(logger, key);
     }
