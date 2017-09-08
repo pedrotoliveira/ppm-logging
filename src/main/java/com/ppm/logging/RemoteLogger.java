@@ -15,30 +15,13 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package com.ppm.commons.logging;
-
-import org.junit.Before;
-import org.junit.Test;
+package com.ppm.logging;
 
 /**
+ * Remote Logger Operations
  *
- * @author cad_ptoliveira
+ * @author Pedro T. Oliveira
+ *
  */
-public class StackTraceFormatterTest {
-
-	public StackTraceFormatterTest() {
-	}
-
-	@Before
-	public void setUp() {
-	}
-
-	@Test
-	public void testFormatToString_Throwable_StackTraceFormatterFormat() {
-	}
-
-	@Test
-	public void testFormatToString_Throwable() {
-	}
-
+public interface RemoteLogger extends LogOperations {
 }
