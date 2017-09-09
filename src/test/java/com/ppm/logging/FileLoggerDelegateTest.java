@@ -147,4 +147,116 @@ public class FileLoggerDelegateTest {
     @Test
     public void testLogKey() {
     }
+
+    /**
+     * Test of create method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testCreate() {
+    }
+
+    /**
+     * Test of info method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testInfo_Object() {
+    }
+
+    /**
+     * Test of warn method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testWarn_Object() {
+    }
+
+    /**
+     * Test of error method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testError_Object() {
+    }
+
+    /**
+     * Test of debug method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testDebug_Object() {
+    }
+
+    /**
+     * Test of info method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testInfo_Object_Throwable() {
+    }
+
+    /**
+     * Test of warn method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testWarn_Object_Throwable() {
+    }
+
+    /**
+     * Test of error method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testError_Object_Throwable() {
+    }
+
+    /**
+     * Test of debug method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testDebug_Object_Throwable() {
+    }
+
+    /**
+     * Test of key method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testKey() {
+    }
+
+    /**
+     * Test of fatal method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testFatal_Object() {
+    }
+
+    /**
+     * Test of log method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testLog_Object() {
+    }
+
+    /**
+     * Test of log method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testLog_Object_MessagePatterns() {
+    }
+
+    /**
+     * Test of fatal method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testFatal_Object_Throwable() {
+    }
+
+    /**
+     * Test of log method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testLog_Object_Throwable() {
+    }
+
+    /**
+     * Test of log method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testLog_3args() {
+    }
 }

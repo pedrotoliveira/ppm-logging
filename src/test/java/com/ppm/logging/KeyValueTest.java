@@ -65,4 +65,11 @@ public class KeyValueTest {
 	public void testAsDebug() {
 	}
 
+    /**
+     * Test of key method, of class KeyValue.
+     */
+    @Test
+    public void testKey() {
+    }
+
 }

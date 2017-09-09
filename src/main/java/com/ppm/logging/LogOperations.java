@@ -90,8 +90,8 @@ public interface LogOperations {
      * Log an Object Data with the Specified Pattern
      *
      * @param object to log
-     * @param pattern A LogPatterns
+     * @param pattern A MessagePatterns
      * @return a LogData
      */
-    LogData log(Object object, LogPatterns pattern);
+    LogData log(Object object, MessagePatterns pattern);
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -18,15 +18,15 @@
 package com.ppm.logging;
 
 import org.apache.logging.log4j.core.Logger;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.*;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.*;
 
 /**
  * Unit tests of class SplunkLogKeyBuilder
@@ -104,5 +104,19 @@ public class LogKeyValueBuilderTest {
 
     @Test
     public void testAsDebug() {
+    }
+
+    /**
+     * Test of create method, of class LogKeyValueBuilder.
+     */
+    @Test
+    public void testCreate() {
+    }
+
+    /**
+     * Test of key method, of class LogKeyValueBuilder.
+     */
+    @Test
+    public void testKey() {
     }
 }

@@ -25,6 +25,7 @@ jar {
 
 dependencies {
     compile (
+        [group: 'br.com.ppm', name: 'ppm-commons', version: '1.1'],
         [group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.9.0'],
         [group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.9.0'],
         //Apache Commons Logging Bridge

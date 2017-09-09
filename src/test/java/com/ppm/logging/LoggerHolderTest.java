@@ -57,4 +57,81 @@ public class LoggerHolderTest {
 	public void testLogKey() {
 	}
 
+    /**
+     * Test of getFileLoggerDelegate method, of class LoggerHolder.
+     */
+    @Test
+    public void testGetFileLoggerDelegate() {
+    }
+
+    /**
+     * Test of getSplunkLoggerDelegate method, of class LoggerHolder.
+     */
+    @Test
+    public void testGetSplunkLoggerDelegate() {
+    }
+
+    /**
+     * Test of getConsoleLoggerDelegate method, of class LoggerHolder.
+     */
+    @Test
+    public void testGetConsoleLoggerDelegate() {
+    }
+
+    /**
+     * Test of info method, of class LoggerHolder.
+     */
+    @Test
+    public void testInfo() {
+    }
+
+    /**
+     * Test of warn method, of class LoggerHolder.
+     */
+    @Test
+    public void testWarn() {
+    }
+
+    /**
+     * Test of error method, of class LoggerHolder.
+     */
+    @Test
+    public void testError() {
+    }
+
+    /**
+     * Test of debug method, of class LoggerHolder.
+     */
+    @Test
+    public void testDebug() {
+    }
+
+    /**
+     * Test of key method, of class LoggerHolder.
+     */
+    @Test
+    public void testKey() {
+    }
+
+    /**
+     * Test of fatal method, of class LoggerHolder.
+     */
+    @Test
+    public void testFatal() {
+    }
+
+    /**
+     * Test of log method, of class LoggerHolder.
+     */
+    @Test
+    public void testLog_Object() {
+    }
+
+    /**
+     * Test of log method, of class LoggerHolder.
+     */
+    @Test
+    public void testLog_Object_MessagePatterns() {
+    }
+
 }

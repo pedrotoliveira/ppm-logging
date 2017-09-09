@@ -21,6 +21,6 @@ package com.ppm.logging;
  *
  * @author pedrotoliveira
  */
-public enum LogPatterns {
+public enum MessagePatterns {
 
 }

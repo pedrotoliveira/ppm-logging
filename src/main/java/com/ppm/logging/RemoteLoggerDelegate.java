@@ -94,7 +94,7 @@ public class RemoteLoggerDelegate implements RemoteLogger {
     }
 
     @Override
-    public LogData log(Object object, LogPatterns pattern) {
+    public LogData log(Object object, MessagePatterns pattern) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }

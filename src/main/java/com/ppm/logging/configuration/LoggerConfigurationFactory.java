@@ -15,7 +15,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package com.ppm.logging;
+package com.ppm.logging.configuration;
 
 import java.net.URI;
 
@@ -33,8 +33,6 @@ import org.apache.logging.log4j.core.config.builder.api.FilterComponentBuilder;
 import org.apache.logging.log4j.core.config.builder.api.RootLoggerComponentBuilder;
 import org.apache.logging.log4j.core.config.builder.impl.BuiltConfiguration;
 import org.apache.logging.log4j.core.config.plugins.Plugin;
-
-import static com.ppm.logging.PropertiesLoader.load;
 
 /**
  * The Logger Configuration Factory
@@ -63,8 +61,8 @@ public class LoggerConfigurationFactory extends ConfigurationFactory {
 
     @Override
     public Configuration getConfiguration(LoggerContext loggerContext, String name, URI configLocation) {
-        PropertiesLoader propertiesLoader = load();
-        Level rootLevel = propertiesLoader.getRootLevel();
+        PropertiesLoader propertiesLoader = createPropertiesLoader();
+        Level rootLevel = Level.FATAL;
 
         ConfigurationBuilder<BuiltConfiguration> configBuilder = newConfigurationBuilder();
         configBuilder.setConfigurationName(name);
@@ -73,7 +71,6 @@ public class LoggerConfigurationFactory extends ConfigurationFactory {
 
         AppenderComponentBuilder consoleAppenderBuilder = configBuilder.newAppender("Console", ConsoleAppender.PLUGIN_NAME);
         consoleAppenderBuilder.addAttribute("target", ConsoleAppender.Target.SYSTEM_OUT);
-
 
         RootLoggerComponentBuilder rootLoggerBuilder = configBuilder.newRootLogger(rootLevel);
 
@@ -84,5 +81,9 @@ public class LoggerConfigurationFactory extends ConfigurationFactory {
         return configBuilder
                 .newFilter("ThresholdFilter", Filter.Result.NEUTRAL, Filter.Result.DENY)
                 .addAttribute("level", level);
+    }
+
+    public PropertiesLoader createPropertiesLoader() {
+        return new DefaultPropertiesLoader();
     }
 }

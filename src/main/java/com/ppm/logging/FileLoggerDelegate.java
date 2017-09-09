@@ -121,7 +121,7 @@ public final class FileLoggerDelegate implements FileLogger {
     }
 
     @Override
-    public LogData log(Object object, LogPatterns pattern) {
+    public LogData log(Object object, MessagePatterns pattern) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -136,7 +136,7 @@ public final class FileLoggerDelegate implements FileLogger {
     }
 
     @Override
-    public LogData log(Object object, Throwable t, LogPatterns pattern) {
+    public LogData log(Object object, Throwable t, MessagePatterns pattern) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

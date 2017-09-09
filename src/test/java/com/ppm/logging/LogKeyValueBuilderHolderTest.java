@@ -57,4 +57,11 @@ public class LogKeyValueBuilderHolderTest {
 	public void testLogKey() {
 	}
 
+    /**
+     * Test of key method, of class LogKeyValueBuilderHolder.
+     */
+    @Test
+    public void testKey() {
+    }
+
 }

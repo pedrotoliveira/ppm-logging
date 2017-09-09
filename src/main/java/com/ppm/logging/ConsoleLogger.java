@@ -82,8 +82,8 @@ public interface ConsoleLogger {
      *
      * @param object to log
      * @param t exception to be logged
-     * @param pattern selected LogPatterns
+     * @param pattern selected MessagePatterns
      * @return a LogData
      */
-    LogData log(final Object object, final Throwable t, final LogPatterns pattern);
+    LogData log(final Object object, final Throwable t, final MessagePatterns pattern);
 }

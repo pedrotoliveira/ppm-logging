@@ -111,7 +111,7 @@ public class LoggerHolder implements LogOperations {
     }
 
     @Override
-    public LogData log(Object object, LogPatterns pattern) {
+    public LogData log(Object object, MessagePatterns pattern) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

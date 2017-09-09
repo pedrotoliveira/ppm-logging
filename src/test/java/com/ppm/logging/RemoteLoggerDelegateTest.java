@@ -97,4 +97,67 @@ public class RemoteLoggerDelegateTest {
     public void testLogData() {
     }
 
+    /**
+     * Test of create method, of class RemoteLoggerDelegate.
+     */
+    @Test
+    public void testCreate() {
+    }
+
+    /**
+     * Test of info method, of class RemoteLoggerDelegate.
+     */
+    @Test
+    public void testInfo() {
+    }
+
+    /**
+     * Test of warn method, of class RemoteLoggerDelegate.
+     */
+    @Test
+    public void testWarn() {
+    }
+
+    /**
+     * Test of error method, of class RemoteLoggerDelegate.
+     */
+    @Test
+    public void testError() {
+    }
+
+    /**
+     * Test of debug method, of class RemoteLoggerDelegate.
+     */
+    @Test
+    public void testDebug() {
+    }
+
+    /**
+     * Test of fatal method, of class RemoteLoggerDelegate.
+     */
+    @Test
+    public void testFatal() {
+    }
+
+    /**
+     * Test of key method, of class RemoteLoggerDelegate.
+     */
+    @Test
+    public void testKey() {
+    }
+
+    /**
+     * Test of log method, of class RemoteLoggerDelegate.
+     */
+    @Test
+    public void testLog_Object() {
+    }
+
+    /**
+     * Test of log method, of class RemoteLoggerDelegate.
+     */
+    @Test
+    public void testLog_Object_MessagePatterns() {
+    }
+
 }

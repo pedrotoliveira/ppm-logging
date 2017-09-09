@@ -53,4 +53,18 @@ public class LoggerServiceTest {
 	public void testSplunk() {
 	}
 
+    /**
+     * Test of console method, of class LoggerService.
+     */
+    @Test
+    public void testConsole() {
+    }
+
+    /**
+     * Test of remote method, of class LoggerService.
+     */
+    @Test
+    public void testRemote() {
+    }
+
 }

@@ -75,7 +75,7 @@ public class ConsoleLoggerDelegate implements ConsoleLogger {
     }
 
     @Override
-    public LogData log(Object object, Throwable t, LogPatterns pattern) {
+    public LogData log(Object object, Throwable t, MessagePatterns pattern) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
