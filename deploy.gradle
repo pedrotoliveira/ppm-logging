@@ -31,11 +31,11 @@ if (project.hasProperty('release') && Boolean.parseBoolean(project.getProperty('
                 }
                 
                 pom.project {
-                    name 'ppm-logging'
-                    description 'PPM Logging Library - is a subproject from PPM Commons'
+                    name projectName
+                    description projectDescription
                     packaging 'jar'
                     url 'https://pedrotoliveira.github.io/ppm-commons/'
-                    inceptionYear '2017'
+                    inceptionYear projectInceptionYear
                     scm {
                         connection 'scm:git:https://github.com/pedrotoliveira/ppm-logging.git'
                         developerConnection 'scm:git:git@github.com:https://github.com/pedrotoliveira/ppm-logging.git'
@@ -44,8 +44,8 @@ if (project.hasProperty('release') && Boolean.parseBoolean(project.getProperty('
 
                     licenses {
                         license {
-                            name 'GNU GENERAL PUBLIC LICENSE, Version 2'
-                            url 'https://www.gnu.org/licenses/gpl-2.0.txt'							
+                            name 'GNU GENERAL PUBLIC LICENSE, Version 3'
+                            url 'http://www.gnu.org/licenses/gpl.txt'							
                         }
                     }
                     developers {
@@ -59,4 +59,30 @@ if (project.hasProperty('release') && Boolean.parseBoolean(project.getProperty('
             }
         }
     }   
+}
+
+configurations { 
+    codacy 
+}
+
+repositories {
+    maven { url "https://jitpack.io" }
+    maven { url "http://dl.bintray.com/typesafe/maven-releases" }
+}
+
+dependencies {
+    codacy 'com.github.codacy:codacy-coverage-reporter:2.0.1'
+}
+
+task sendCoverageToCodacy(type: JavaExec, dependsOn: jacocoTestReport) {    
+    main = "com.codacy.CodacyCoverageReporter"
+    classpath = configurations.codacy
+    args = [
+            "-l",
+            "Java",
+            "-r",
+            "${buildDir}/reports/jacoco/test/jacocoTestReport.xml",   
+            "--projectToken",
+            projectToken
+    ]
 }
