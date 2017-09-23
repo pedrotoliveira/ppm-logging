@@ -21,16 +21,18 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
+ * Unit Tests for DefaultPropertiesLoader
  *
  * @author pedrotoliveira
+ * @see DefaultPropertiesLoader
  */
 public class DefaultPropertiesLoaderTest {
 
-    public DefaultPropertiesLoaderTest() {
-    }
+    private DefaultPropertiesLoader loader;
 
     @Before
     public void setUp() {
+        this.loader = new DefaultPropertiesLoader();
     }
 
     /**
@@ -38,6 +40,7 @@ public class DefaultPropertiesLoaderTest {
      */
     @Test
     public void testGetRootLevel() {
+        //assertThat()
     }
 
     /**

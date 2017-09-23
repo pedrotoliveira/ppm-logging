@@ -44,7 +44,7 @@ public class PropertiesLoaderTest {
     }
 
     /**
-     * Test of getConsoleEnabled method, of class PropertiesLoader.
+     * Test of isConsoleEnabled method, of class PropertiesLoader.
      */
     @Test
     public void testGetConsoleEnabled() {
@@ -72,7 +72,7 @@ public class PropertiesLoaderTest {
     }
 
     /**
-     * Test of getIgnoreExceptions method, of class PropertiesLoader.
+     * Test of getConsoleIgnoreExceptions method, of class PropertiesLoader.
      */
     @Test
     public void testGetIgnoreExceptions() {
@@ -86,7 +86,7 @@ public class PropertiesLoaderTest {
     }
 
     /**
-     * Test of getFileEnabled method, of class PropertiesLoader.
+     * Test of isFileEnabled method, of class PropertiesLoader.
      */
     @Test
     public void testGetFileEnabled() {
@@ -135,7 +135,7 @@ public class PropertiesLoaderTest {
     }
 
     /**
-     * Test of getRemoteEnabled method, of class PropertiesLoader.
+     * Test of isRemoteEnabled method, of class PropertiesLoader.
      */
     @Test
     public void testGetRemoteEnabled() {
@@ -175,7 +175,7 @@ public class PropertiesLoaderTest {
             return null;
         }
 
-        public Boolean getConsoleEnabled() {
+        public Boolean isConsoleEnabled() {
             return null;
         }
 
@@ -191,7 +191,7 @@ public class PropertiesLoaderTest {
             return "";
         }
 
-        public String getIgnoreExceptions() {
+        public String getConsoleIgnoreExceptions() {
             return "";
         }
 
@@ -199,7 +199,7 @@ public class PropertiesLoaderTest {
             return "";
         }
 
-        public Boolean getFileEnabled() {
+        public Boolean isFileEnabled() {
             return null;
         }
 
@@ -227,7 +227,7 @@ public class PropertiesLoaderTest {
             return "";
         }
 
-        public Boolean getRemoteEnabled() {
+        public Boolean isRemoteEnabled() {
             return null;
         }
 

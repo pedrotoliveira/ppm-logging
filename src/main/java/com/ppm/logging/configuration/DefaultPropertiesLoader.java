@@ -17,7 +17,6 @@
  */
 package com.ppm.logging.configuration;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
@@ -26,6 +25,7 @@ import java.util.Properties;
 
 import org.apache.logging.log4j.Level;
 
+import static com.ppm.logging.configuration.ConfigurationKey.*;
 import static java.lang.ClassLoader.getSystemResource;
 import static org.apache.logging.log4j.Level.getLevel;
 
@@ -38,27 +38,32 @@ public class DefaultPropertiesLoader implements PropertiesLoader {
 
     private static final String PPM_LOGGING_PROPERTIES = "ppm-logging.properties";
     private static final String COMMA = ",";
+    private static final String ERROR_MESSAGE = "Error=\"Loading ppm-logging.properties\", Message=\":ex:\"";
 
     private final Properties properties;
+
+    public DefaultPropertiesLoader() {
+        this(new Properties());
+        loadPropertiesFile();
+    }
 
     public DefaultPropertiesLoader(Properties properties) {
         this.properties = properties;
     }
 
-    public DefaultPropertiesLoader() {
+    private void loadPropertiesFile() throws IllegalStateException {
         try {
             URL url = getSystemResource(PPM_LOGGING_PROPERTIES);
-            if (url == null) {
-                throw new FileNotFoundException(PPM_LOGGING_PROPERTIES + " Not Found!");
+            if (url != null) {
+                this.properties.load(url.openStream());
             }
-            this.properties = new Properties();
-            this.properties.load(url.openStream());
         } catch (IOException ex) {
-            throw new IllegalStateException(
-                    "Error=\"Loading ppm-logging.properties\","
-                    + " Message=\"" + ex.getMessage() + "\"",
-                    ex);
+            handleIOException(ex);
         }
+    }
+
+    private void handleIOException(IOException ex) throws IllegalStateException {
+        throw new IllegalStateException(ERROR_MESSAGE.replaceFirst(":ex:", ex.getMessage()), ex);
     }
 
     @Override
@@ -67,7 +72,7 @@ public class DefaultPropertiesLoader implements PropertiesLoader {
     }
 
     @Override
-    public Boolean getConsoleEnabled() {
+    public Boolean isConsoleEnabled() {
         return Boolean.valueOf(get(properties, CONSOLE_ENABLED, "true"));
     }
 
@@ -88,23 +93,23 @@ public class DefaultPropertiesLoader implements PropertiesLoader {
     }
 
     @Override
-    public String getIgnoreExceptions() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getConsoleIgnoreExceptions() {
+        return get(properties, CONSOLE_IGNORE_EX, "false");
     }
 
     @Override
     public String getConsoleTarget() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return get(properties, CONSOLE_TARGET, "SYSTEM_OUT");
     }
 
     @Override
-    public Boolean getFileEnabled() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Boolean isFileEnabled() {
+        return Boolean.valueOf(get(properties, FILE_ENABLED, "true"));
     }
 
     @Override
     public Level getFileLevel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
@@ -133,7 +138,7 @@ public class DefaultPropertiesLoader implements PropertiesLoader {
     }
 
     @Override
-    public Boolean getRemoteEnabled() {
+    public Boolean isRemoteEnabled() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
