@@ -24,7 +24,7 @@ import java.util.Objects;
  *
  * @author Pedro T. Oliveira
  */
-public class LoggerService implements FluentLogger {
+public final class LoggerService implements FluentLogger {
 
     private final LoggerHolder holder;
 
@@ -40,6 +40,16 @@ public class LoggerService implements FluentLogger {
      * @return FluentLogger
      */
     public static FluentLogger init(final Class<?> clazz) {
+        return new LoggerService(clazz);
+    }
+
+    /**
+     * Initialize a new Fluent Logger based on a class
+     *
+     * @param clazz
+     * @return FluentLogger
+     */
+    public static FluentLogger by(final Class<?> clazz) {
         return new LoggerService(clazz);
     }
 
