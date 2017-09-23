@@ -36,8 +36,8 @@ public final class LoggerService implements FluentLogger {
     /**
      * Initialize a new Fluent Logger based on a class
      *
-     * @param clazz
-     * @return FluentLogger
+     * @param clazz a Class to be attached to the Logger
+     * @return FluentLogger instance
      */
     public static FluentLogger init(final Class<?> clazz) {
         return new LoggerService(clazz);
@@ -46,8 +46,8 @@ public final class LoggerService implements FluentLogger {
     /**
      * Initialize a new Fluent Logger based on a class
      *
-     * @param clazz
-     * @return FluentLogger
+     * @param clazz a Class to be attached to the Logger
+     * @return FluentLogger instance
      */
     public static FluentLogger by(final Class<?> clazz) {
         return new LoggerService(clazz);
