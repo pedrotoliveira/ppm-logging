@@ -1,4 +1,4 @@
-if (project.hasProperty('release') && Boolean.parseBoolean(project.getProperty('release'))) {
+if (project.hasProperty('deploy') && Boolean.parseBoolean(project.getProperty('deploy'))) {
 
     if (!hasProperty('ossrhUsername') || !hasProperty('ossrhPassword')) {
         println 'CAN\'T RELEASE PROJECT'
