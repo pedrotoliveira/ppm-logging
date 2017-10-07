@@ -17,6 +17,7 @@
  */
 package com.ppm.logging;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -29,5 +30,9 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class RemoteLoggerDelegateTest {
 
     private RemoteLoggerDelegate delegate;
+
+    @Test
+    public void test() {
+    }
 
 }
