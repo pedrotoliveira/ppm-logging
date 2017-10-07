@@ -1,4 +1,4 @@
-/*
+/* 
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -18,13 +18,14 @@
 package com.ppm.logging;
 
 import org.apache.logging.log4j.core.Logger;
+import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.verify;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-
-import static org.mockito.Mockito.*;
 
 /**
  * Unit tests of class RemoteLoggerDelegate
@@ -47,45 +48,45 @@ public class RemoteLoggerDelegateTest {
     @Before
     public void setUp() throws Exception {
         this.message = Object.class.cast("Something to log");
-        this.delegate = new RemoteLoggerDelegate(logger);
+        this.delegate = RemoteLoggerDelegate.create(logger);
     }
 
     @Test
     public final void testLogInfo() {
-        delegate.info(message);
+        delegate.logInfo(message);
         verify(logger, atLeastOnce()).info(message);
     }
 
     @Test
     public final void testLogWarn() {
-        delegate.warn(message);
+        delegate.logWarn(message);
         verify(logger, atLeastOnce()).warn(message);
     }
 
     @Test
     public final void testLogDebug() {
-        delegate.debug(message);
+        delegate.logDebug(message);
         verify(logger, atLeastOnce()).debug(message);
     }
 
     @Test
     public final void testLogError() {
-        delegate.error(message);
+        delegate.logError(message);
         verify(logger, atLeastOnce()).error(message);
     }
 
     @Test
     public final void testLogKeyValue() {
-        delegate.key("key=").value("value").asInfo();
+        delegate.logKey("key=").value("value").asInfo();
         verify(logger, atLeastOnce()).info("key=value ");
 
-        delegate.key("key=").value("value").asDebug();
+        delegate.logKey("key=").value("value").asDebug();
         verify(logger, atLeastOnce()).debug("key=value ");
 
-        delegate.key("key=").value("value").asWarn();
+        delegate.logKey("key=").value("value").asWarn();
         verify(logger, atLeastOnce()).warn("key=value ");
 
-        delegate.key("key=").value("value").asError();
+        delegate.logKey("key=").value("value").asError();
         verify(logger, atLeastOnce()).error("key=value ");
     }
 
@@ -95,69 +96,6 @@ public class RemoteLoggerDelegateTest {
 
     @Test
     public void testLogData() {
-    }
-
-    /**
-     * Test of create method, of class RemoteLoggerDelegate.
-     */
-    @Test
-    public void testCreate() {
-    }
-
-    /**
-     * Test of info method, of class RemoteLoggerDelegate.
-     */
-    @Test
-    public void testInfo() {
-    }
-
-    /**
-     * Test of warn method, of class RemoteLoggerDelegate.
-     */
-    @Test
-    public void testWarn() {
-    }
-
-    /**
-     * Test of error method, of class RemoteLoggerDelegate.
-     */
-    @Test
-    public void testError() {
-    }
-
-    /**
-     * Test of debug method, of class RemoteLoggerDelegate.
-     */
-    @Test
-    public void testDebug() {
-    }
-
-    /**
-     * Test of fatal method, of class RemoteLoggerDelegate.
-     */
-    @Test
-    public void testFatal() {
-    }
-
-    /**
-     * Test of key method, of class RemoteLoggerDelegate.
-     */
-    @Test
-    public void testKey() {
-    }
-
-    /**
-     * Test of log method, of class RemoteLoggerDelegate.
-     */
-    @Test
-    public void testLog_Object() {
-    }
-
-    /**
-     * Test of log method, of class RemoteLoggerDelegate.
-     */
-    @Test
-    public void testLog_Object_MessagePatterns() {
     }
 
 }

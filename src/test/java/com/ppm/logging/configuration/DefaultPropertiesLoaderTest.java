@@ -17,6 +17,9 @@
  */
 package com.ppm.logging.configuration;
 
+import br.com.ppm.test.helper.FluentTestHelper;
+
+import org.apache.logging.log4j.Level;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,7 +29,7 @@ import org.junit.Test;
  * @author pedrotoliveira
  * @see DefaultPropertiesLoader
  */
-public class DefaultPropertiesLoaderTest {
+public class DefaultPropertiesLoaderTest extends FluentTestHelper {
 
     private DefaultPropertiesLoader loader;
 
@@ -40,7 +43,7 @@ public class DefaultPropertiesLoaderTest {
      */
     @Test
     public void testGetRootLevel() {
-        //assertThat()
+        testCase("Root Level Should Be ALL").assertEqualTo(loader.getRootLevel(), Level.ALL);
     }
 
     /**
