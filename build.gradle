@@ -27,7 +27,7 @@ jar {
 
 dependencies {
     compile (
-        [group: 'br.com.ppm', name: 'ppm-commons', version: '1.1'],
+        [group: 'br.com.ppm', name: 'ppm-commons', version: '1.2.3'],        
         [group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.9.0'],
         [group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.9.0'],
         //Apache Commons Logging Bridge
@@ -45,11 +45,11 @@ dependencies {
         //NoSQL Appenders
         [group: 'org.apache.logging.log4j', name: 'log4j-nosql', version: '2.9.0'],
         //IO Streams
-        [ group: 'org.apache.logging.log4j', name: 'log4j-iostreams', version: '2.9.0']
+        [group: 'org.apache.logging.log4j', name: 'log4j-iostreams', version: '2.9.0']        
     )
     
     testCompile(
-        [group: 'br.com.ppm', name: 'test-helper', version: '0.1.2' ]
+        [group: 'br.com.ppm', name: 'test-helper', version: '0.1.2' ]        
     )
 }
 
@@ -111,5 +111,11 @@ jacocoTestReport {
         csv.enabled true
         html.enabled true
         html.destination file("${buildDir}/reports/jacocoHTML")
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'xml-apis:xml-apis:1.0.b2'
     }
 }
