@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2018. - PPM Sistemas de Informacao LTDA, Todos os direitos reservados.
+  ~
+  ~ Este arquivo e uma propriedade confidencial da PPM Sistemas de Informacao LTDA.
+  ~ Nenhuma parte do mesmo pode ser copiada, reproduzida, impressa ou transmitida por quaquer
+  ~ meio sem autorizacao expressa e por escrito de um representante legal da PPM Sistemas de
+  ~ informacao LTDA.
+  ~
+  ~ All rights reserved
+  ~
+  ~ This file is a confidential property of PPM Sistemas de Informacao LTDA.
+  ~ No part of this file may be reproduced or copied in any form or by any means without written
+  ~ permisson from an authorized person from PPM Sistemas de Informacao LTDA.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>br.com.ppm</groupId>
+    <artifactId>ppm-logging</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>PPM Logging</name>
+    <description>PPM Logging Library - A Fluent Log API on Top of Log4j2</description>
+    <url>http://pedrotoliveira.github.io/ppm-logging/</url>
+    <inceptionYear>2017</inceptionYear>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <scm>
+        <url>https://github.com/pedrotoliveira/ppm-logging.git</url>
+        <connection>scm:git:https://github.com/pedrotoliveira/ppm-commons.git</connection>
+        <developerConnection>scm:git:https://github.com/pedrotoliveira/ppm-commons.git</developerConnection>
+        <tag>ppm-commons-2.0.0</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Pedro T. Oliveira</name>
+            <email>pedro.oliveira20@gmail.com</email>
+            <organization>PPM Sistemas da Informacao LTDA.</organization>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>GNU GENERAL PUBLIC LICENSE, Version 3</name>
+            <url>http://www.gnu.org/licenses/gpl.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>br.com.ppm</groupId>
+            <artifactId>ppm-commons</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jul</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.reactivestreams</groupId>
+            <artifactId>reactive-streams</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>br.com.ppm</groupId>
+            <artifactId>ppm-test-helper</artifactId>
+            <version>0.1.6</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-bom</artifactId>
+                <version>2.11.1</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <sourceDirectory>/src/main/java</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>/src/main/resource</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <configuration>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

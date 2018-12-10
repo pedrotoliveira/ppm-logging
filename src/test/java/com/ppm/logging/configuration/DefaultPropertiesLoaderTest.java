@@ -51,6 +51,7 @@ public class DefaultPropertiesLoaderTest extends FluentTestHelper {
      */
     @Test
     public void testGetConsoleEnabled() {
+        testCase("Console Log Should be true").assertTrue(loader.isConsoleEnabled());
     }
 
     /**
@@ -58,6 +59,7 @@ public class DefaultPropertiesLoaderTest extends FluentTestHelper {
      */
     @Test
     public void testGetConsoleLevel() {
+        testCase("Console Level Should Be FATAL").assertEqualTo(loader.getConsoleLevel());
     }
 
     /**
