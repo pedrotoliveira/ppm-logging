@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -19,6 +19,7 @@ package com.ppm.logging;
 
 import java.util.Map;
 import java.util.regex.Pattern;
+
 import org.apache.logging.log4j.Logger;
 
 /**
@@ -54,6 +55,7 @@ public class LogDataBuilder implements LogData {
         this.t = t;
     }
 
+    @Override
     public AsLevel asInfo() {
         if (t == null) {
             logger.info(data);
@@ -63,6 +65,7 @@ public class LogDataBuilder implements LogData {
         return this;
     }
 
+    @Override
     public AsLevel asWarn() {
         if (t == null) {
             logger.warn(data);
@@ -72,6 +75,7 @@ public class LogDataBuilder implements LogData {
         return this;
     }
 
+    @Override
     public AsLevel asError() {
         if (t == null) {
             logger.error(data);
@@ -81,6 +85,7 @@ public class LogDataBuilder implements LogData {
         return this;
     }
 
+    @Override
     public AsLevel asDebug() {
         if (t == null) {
             logger.debug(data);

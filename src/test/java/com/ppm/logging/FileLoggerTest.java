@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2017 pedrotoliveira
+/*
+ * Copyright (C) 2017 PPM Sistemas da Informacao LTDA
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,42 +15,26 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package com.ppm.commons.logging;
+package com.ppm.logging;
+
+import org.junit.Before;
+import org.junit.Test;
 
 /**
- * Severity types for logging.
  *
- * @author Pedro T. Oliveira
+ * @author pedrotoliveira
  */
-public enum Severity {
+public class FileLoggerTest {
 
-	/**
-	 *
-	 */
-	INFO,
+    public FileLoggerTest() {
+    }
 
-	/**
-	 *
-	 */
-	WARN,
+    @Before
+    public void setUp() {
+    }
 
-	/**
-	 *
-	 */
-	DEBUG,
+    @Test
+    public void testSomeMethod() {
+    }
 
-	/**
-	 *
-	 */
-	ERROR,
-
-	/**
-	 *
-	 */
-	TRACE,
-
-	/**
-	 *
-	 */
-	FATAL;
 }

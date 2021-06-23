@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 pedrotoliveira
+ * Copyright (C) 2017 PPM Sistemas da Informacao LTDA
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,22 +17,34 @@
  */
 package com.ppm.logging;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.apache.logging.log4j.message.Message;
 
 /**
- * Unit tests of class RemoteLoggerDelegate
  *
- * @author Pedro T. Oliveira
+ * @author pedrotoliveira
  */
-@RunWith(MockitoJUnitRunner.class)
-public class RemoteLoggerDelegateTest {
+public class LogMessage implements Message {
 
-    private RemoteLoggerDelegate delegate;
+    private static final long serialVersionUID = 7947629685272045055L;
 
-    @Test
-    public void test() {
+    @Override
+    public String getFormattedMessage() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public String getFormat() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Object[] getParameters() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Throwable getThrowable() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }

@@ -20,78 +20,70 @@ package com.ppm.logging;
 import java.util.Map;
 
 /**
- * Common Log Operations
  *
- * @author Pedro T. Oliveira
- *
+ * @author pedrotoliveira
  */
-public interface LogOperations {
+public interface ConsoleLogger {
 
     /**
-     * Log a message as Info level.
      *
-     * @param message
+     * @param message log message
+     * @param t exception
      */
-    LogOperations info(final Object message);
+    ConsoleLogger info(final Object message, final Throwable t);
 
     /**
-     * Log a message as Warn level.
      *
-     * @param message
+     * @param message log message
+     * @param t exception
      */
-    LogOperations warn(final Object message);
+    ConsoleLogger warn(final Object message, final Throwable t);
 
     /**
-     * Log a message as Error level.
      *
-     * @param message
+     * @param message log message
+     * @param t exception
      */
-    LogOperations error(final Object message);
+    ConsoleLogger error(final Object message, final Throwable t);
 
     /**
-     * Log a message as Debug level.
      *
-     * @param message
+     * @param message log message
+     * @param t exception
      */
-    LogOperations debug(final Object message);
+    ConsoleLogger debug(final Object message, final Throwable t);
 
     /**
-     * Log a message as Fatal level.
      *
-     * @param message
+     * @param message log message
+     * @param t exception
      */
-    LogOperations fatal(final Object message);
+    ConsoleLogger fatal(final Object message, final Throwable t);
 
     /**
-     * Log a collection of key and value messages.
      *
-     * @param logData
+     * @param logData Map key-value with log data
+     * @param t exception to be logged
      * @return a LogData
      */
-    LogData logData(final Map<String, Object> logData);
-
-    /**
-     * Add a key to log
-     *
-     * @param key key value. Can be formated with "=" or without it.
-     * @return SplunkLogKey
-     */
-    LogKey key(final String key);
+    LogData logData(final Map<String, Object> logData, final Throwable t);
 
     /**
      * Log an Object Data with the Default Configurated Pattern
      *
      * @param object to Log
+     * @param t exception to be logged
      * @return a LogData
      */
-    LogData log(Object object);
+    LogData log(final Object object, final Throwable t);
 
     /**
      * Log an Object Data with the Specified Pattern
      *
      * @param object to log
-     * @param pattern A MessagePatterns
+     * @param t exception to be logged
+     * @param pattern selected MessagePatterns
      * @return a LogData
      */
-    LogData log(Object object, MessagePatterns pattern);
+    LogData log(final Object object, final Throwable t, final MessagePatterns pattern);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 pedrotoliveira
+ * Copyright (C) 2017 PPM Sistemas da Informacao LTDA
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,22 +17,24 @@
  */
 package com.ppm.logging;
 
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
 
 /**
- * Unit tests of class RemoteLoggerDelegate
  *
- * @author Pedro T. Oliveira
+ * @author pedrotoliveira
  */
-@RunWith(MockitoJUnitRunner.class)
-public class RemoteLoggerDelegateTest {
+public class RemoteLoggerTest {
 
-    private RemoteLoggerDelegate delegate;
+    public RemoteLoggerTest() {
+    }
+
+    @Before
+    public void setUp() {
+    }
 
     @Test
-    public void test() {
+    public void testSomeMethod() {
     }
 
 }

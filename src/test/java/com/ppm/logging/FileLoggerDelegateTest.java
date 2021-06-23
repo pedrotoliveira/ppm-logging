@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -18,14 +18,13 @@
 package com.ppm.logging;
 
 import org.apache.logging.log4j.core.Logger;
-import static org.mockito.Mockito.atLeastOnce;
-import static org.mockito.Mockito.verify;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import static org.mockito.Mockito.*;
 
 /**
  * Unit Test of class FileLoggerDelegate
@@ -51,57 +50,57 @@ public class FileLoggerDelegateTest {
     public void setUp() throws Exception {
         this.message = Object.class.cast("Something to log");
         this.aException = new Exception("A Exception");
-        this.delegate = FileLoggerDelegate.create(this.logger);
+        this.delegate = new FileLoggerDelegate(logger);
     }
 
     @Test
     public final void testLogInfo() {
-        delegate.logInfo(message);
+        delegate.info(message);
         verify(logger, atLeastOnce()).info(message);
 
-        delegate.logInfo(message, aException);
+        delegate.info(message, aException);
         verify(logger, atLeastOnce()).info(message, aException);
     }
 
     @Test
     public final void testLogWarn() {
-        delegate.logWarn(message);
+        delegate.warn(message);
         verify(logger, atLeastOnce()).warn(message);
 
-        delegate.logWarn(message, aException);
+        delegate.warn(message, aException);
         verify(logger, atLeastOnce()).warn(message, aException);
     }
 
     @Test
     public final void testLogDebug() {
-        delegate.logDebug(message);
+        delegate.debug(message);
         verify(logger, atLeastOnce()).debug(message);
 
-        delegate.logDebug(message, aException);
+        delegate.debug(message, aException);
         verify(logger, atLeastOnce()).debug(message, aException);
     }
 
     @Test
     public final void testLogError() {
-        delegate.logError(message);
+        delegate.error(message);
         verify(logger, atLeastOnce()).error(message);
 
-        delegate.logError(message, aException);
+        delegate.error(message, aException);
         verify(logger, atLeastOnce()).error(message, aException);
     }
 
     @Test
     public final void testLogKeyValue() {
-        delegate.logKey("key=").value("value").asInfo();
+        delegate.key("key=").value("value").asInfo();
         verify(logger, atLeastOnce()).info("key=value ");
 
-        delegate.logKey("key=").value("value").asDebug();
+        delegate.key("key=").value("value").asDebug();
         verify(logger, atLeastOnce()).debug("key=value ");
 
-        delegate.logKey("key=").value("value").asWarn();
+        delegate.key("key=").value("value").asWarn();
         verify(logger, atLeastOnce()).warn("key=value ");
 
-        delegate.logKey("key=").value("value").asError();
+        delegate.key("key=").value("value").asError();
         verify(logger, atLeastOnce()).error("key=value ");
     }
 
@@ -147,5 +146,117 @@ public class FileLoggerDelegateTest {
 
     @Test
     public void testLogKey() {
+    }
+
+    /**
+     * Test of create method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testCreate() {
+    }
+
+    /**
+     * Test of info method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testInfo_Object() {
+    }
+
+    /**
+     * Test of warn method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testWarn_Object() {
+    }
+
+    /**
+     * Test of error method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testError_Object() {
+    }
+
+    /**
+     * Test of debug method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testDebug_Object() {
+    }
+
+    /**
+     * Test of info method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testInfo_Object_Throwable() {
+    }
+
+    /**
+     * Test of warn method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testWarn_Object_Throwable() {
+    }
+
+    /**
+     * Test of error method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testError_Object_Throwable() {
+    }
+
+    /**
+     * Test of debug method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testDebug_Object_Throwable() {
+    }
+
+    /**
+     * Test of key method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testKey() {
+    }
+
+    /**
+     * Test of fatal method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testFatal_Object() {
+    }
+
+    /**
+     * Test of log method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testLog_Object() {
+    }
+
+    /**
+     * Test of log method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testLog_Object_MessagePatterns() {
+    }
+
+    /**
+     * Test of fatal method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testFatal_Object_Throwable() {
+    }
+
+    /**
+     * Test of log method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testLog_Object_Throwable() {
+    }
+
+    /**
+     * Test of log method, of class FileLoggerDelegate.
+     */
+    @Test
+    public void testLog_3args() {
     }
 }

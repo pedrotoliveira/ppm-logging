@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -24,7 +24,7 @@ import java.util.Objects;
  *
  * @author Pedro T. Oliveira
  */
-public class LoggerService implements FluentLogger {
+public final class LoggerService implements FluentLogger {
 
     private final LoggerHolder holder;
 
@@ -36,16 +36,31 @@ public class LoggerService implements FluentLogger {
     /**
      * Initialize a new Fluent Logger based on a class
      *
-     * @param clazz
-     * @return FluentLogger
+     * @param clazz a Class to be attached to the Logger
+     * @return FluentLogger instance
      */
     public static FluentLogger init(final Class<?> clazz) {
+        return new LoggerService(clazz);
+    }
+
+    /**
+     * Initialize a new Fluent Logger based on a class
+     *
+     * @param clazz a Class to be attached to the Logger
+     * @return FluentLogger instance
+     */
+    public static FluentLogger by(final Class<?> clazz) {
         return new LoggerService(clazz);
     }
 
     @Override
     public LogOperations all() {
         return holder;
+    }
+
+    @Override
+    public ConsoleLogger console() {
+        return holder.getConsoleLoggerDelegate();
     }
 
     @Override

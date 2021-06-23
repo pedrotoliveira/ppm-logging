@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -19,6 +19,7 @@ package com.ppm.logging;
 
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
@@ -31,7 +32,7 @@ public final class FileLoggerDelegate implements FileLogger {
 
     private final Logger logger;
 
-    private FileLoggerDelegate(final Logger logger) {
+    FileLoggerDelegate(final Logger logger) {
         this.logger = logger;
     }
 
@@ -40,44 +41,61 @@ public final class FileLoggerDelegate implements FileLogger {
      * @param logger
      * @return The FileLoggerDelegate
      */
-    protected static FileLoggerDelegate create(final Logger logger) {
-        return new FileLoggerDelegate(logger);
+    static FileLoggerDelegate create(final Class<?> clazz) {
+        String loggerName = FILE_LOGGER_PREFIX + clazz.getName();
+        Logger fileLogger = LogManager.getLogger(loggerName);
+        return new FileLoggerDelegate(fileLogger);
     }
 
-    public void logInfo(Object message) {
+    @Override
+    public FileLogger info(Object message) {
         logger.info(message);
+        return this;
     }
 
-    public void logWarn(Object message) {
+    @Override
+    public FileLogger warn(Object message) {
         logger.warn(message);
+        return this;
     }
 
-    public void logError(Object message) {
+    @Override
+    public FileLogger error(Object message) {
         logger.error(message);
+        return this;
     }
 
-    public void logDebug(Object message) {
+    @Override
+    public FileLogger debug(Object message) {
         logger.debug(message);
+        return this;
     }
 
-    public void logInfo(Object message, Throwable t) {
+    @Override
+    public FileLogger info(Object message, Throwable t) {
         logger.info(message, t);
+        return this;
     }
 
-    public void logWarn(Object message, Throwable t) {
+    @Override
+    public FileLogger warn(Object message, Throwable t) {
         logger.warn(message, t);
+        return this;
     }
 
     @Override
-    public void logError(Object message, Throwable t) {
+    public FileLogger error(Object message, Throwable t) {
         logger.error(message, t);
+        return this;
     }
 
     @Override
-    public void logDebug(Object message, Throwable t) {
+    public FileLogger debug(Object message, Throwable t) {
         logger.debug(message, t);
+        return this;
     }
 
+    @Override
     public LogData logData(Map<String, Object> logData) {
         return new LogDataBuilder(logger, logData);
     }
@@ -87,7 +105,38 @@ public final class FileLoggerDelegate implements FileLogger {
         return new LogDataBuilder(logger, logData, t);
     }
 
-    public LogKey logKey(String key) {
+    @Override
+    public LogKey key(String key) {
         return LogKeyValueBuilder.create(logger, key);
+    }
+
+    @Override
+    public LogOperations fatal(Object message) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public LogData log(Object object) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public LogData log(Object object, MessagePatterns pattern) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ConsoleLogger fatal(Object message, Throwable t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public LogData log(Object object, Throwable t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public LogData log(Object object, Throwable t, MessagePatterns pattern) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

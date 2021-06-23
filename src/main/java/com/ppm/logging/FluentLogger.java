@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -31,6 +31,13 @@ public interface FluentLogger {
      * @return All Message Builders
      */
     LogOperations all();
+
+    /**
+     * Invoke Console Logger Operations
+     *
+     * @return Console Logger Message Builder
+     */
+    ConsoleLogger console();
 
     /**
      * Invoke File Logger Operations

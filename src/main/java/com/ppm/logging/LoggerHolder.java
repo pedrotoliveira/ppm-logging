@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -19,8 +19,6 @@ package com.ppm.logging;
 
 import java.util.Map;
 
-import org.apache.logging.log4j.LogManager;
-
 /**
  * Logger Holder
  *
@@ -29,63 +27,91 @@ import org.apache.logging.log4j.LogManager;
  */
 public class LoggerHolder implements LogOperations {
 
+    private final ConsoleLoggerDelegate consoleLoggerDelegate;
     private final FileLoggerDelegate fileLoggerDelegate;
-    private final RemoteLoggerDelegate splunkLoggerDelegate;
+    private final RemoteLoggerDelegate remoteLoggerDelegate;
 
     /**
      *
      * @param clazz
      */
     public LoggerHolder(final Class<?> clazz) {
-        this.splunkLoggerDelegate = RemoteLoggerDelegate.create(LogManager.getLogger("splunk=" + clazz.getName()));
-        this.fileLoggerDelegate = FileLoggerDelegate.create(LogManager.getLogger(clazz));
+        this.consoleLoggerDelegate = ConsoleLoggerDelegate.create(clazz);
+        this.fileLoggerDelegate = FileLoggerDelegate.create(clazz);
+        this.remoteLoggerDelegate = RemoteLoggerDelegate.create(clazz);
     }
 
     /**
-     * @return the fileLoggerDelegate
+     * @return the fileLogger
      */
-    FileLoggerDelegate getFileLoggerDelegate() {
+    FileLogger getFileLoggerDelegate() {
         return fileLoggerDelegate;
     }
 
     /**
-     * @return the splunkLoggerDelegate
+     * @return the remoteLogger
      */
-    RemoteLoggerDelegate getSplunkLoggerDelegate() {
-        return splunkLoggerDelegate;
+    RemoteLogger getSplunkLoggerDelegate() {
+        return remoteLoggerDelegate;
+    }
+
+    /**
+     * @return the ConsoleLoggerDelegate
+     */
+    ConsoleLogger getConsoleLoggerDelegate() {
+        return consoleLoggerDelegate;
     }
 
     @Override
-    public void logInfo(final Object message) {
-        fileLoggerDelegate.logInfo(message);
-        splunkLoggerDelegate.logInfo(message);
+    public LogOperations info(final Object message) {
+        fileLoggerDelegate.info(message);
+        remoteLoggerDelegate.info(message);
+        return this;
     }
 
     @Override
-    public void logWarn(final Object message) {
-        fileLoggerDelegate.logWarn(message);
-        splunkLoggerDelegate.logWarn(message);
+    public LogOperations warn(final Object message) {
+        fileLoggerDelegate.warn(message);
+        remoteLoggerDelegate.warn(message);
+        return this;
     }
 
     @Override
-    public void logError(final Object message) {
-        fileLoggerDelegate.logError(message);
-        splunkLoggerDelegate.logError(message);
+    public LogOperations error(final Object message) {
+        fileLoggerDelegate.error(message);
+        remoteLoggerDelegate.error(message);
+        return this;
     }
 
     @Override
-    public void logDebug(final Object message) {
-        fileLoggerDelegate.logDebug(message);
-        splunkLoggerDelegate.logDebug(message);
+    public LogOperations debug(final Object message) {
+        fileLoggerDelegate.debug(message);
+        remoteLoggerDelegate.debug(message);
+        return this;
     }
 
     @Override
     public LogDataHolder logData(final Map<String, Object> logData) {
-        return new LogDataHolder(logData, fileLoggerDelegate, splunkLoggerDelegate);
+        return new LogDataHolder(logData, fileLoggerDelegate, remoteLoggerDelegate);
     }
 
     @Override
-    public LogKey logKey(String key) {
-        return new LogKeyValueBuilderHolder(key, fileLoggerDelegate, splunkLoggerDelegate);
+    public LogKey key(String key) {
+        return new LogKeyValueBuilderHolder(key, fileLoggerDelegate, remoteLoggerDelegate);
+    }
+
+    @Override
+    public LogOperations fatal(Object message) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public LogData log(Object object) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public LogData log(Object object, MessagePatterns pattern) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

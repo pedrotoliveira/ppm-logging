@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 pedrotoliveira
+ * Copyright (C) 2017 PPM Sistemas da Informacao LTDA
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,24 +15,22 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package com.ppm.logging;
+package com.ppm.logging.configuration;
 
-import org.junit.Test;
+import org.junit.Before;
 import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.junit.runners.Suite;
 
 /**
- * Unit tests of class RemoteLoggerDelegate
  *
- * @author Pedro T. Oliveira
+ * @author pedrotoliveira
  */
-@RunWith(MockitoJUnitRunner.class)
-public class RemoteLoggerDelegateTest {
+@RunWith(Suite.class)
+@Suite.SuiteClasses({com.ppm.logging.configuration.LoggerConfigurationFactoryTest.class, com.ppm.logging.configuration.PropertiesLoaderTest.class, com.ppm.logging.configuration.DefaultPropertiesLoaderTest.class})
+public class ConfigurationSuite {
 
-    private RemoteLoggerDelegate delegate;
-
-    @Test
-    public void test() {
+    @Before
+    public void setUp() throws Exception {
     }
 
 }

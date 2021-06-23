@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -24,4 +24,6 @@ package com.ppm.logging;
  *
  */
 public interface RemoteLogger extends LogOperations {
+
+    String REMOTE_LOGGER_PREFIX = "remote-";
 }

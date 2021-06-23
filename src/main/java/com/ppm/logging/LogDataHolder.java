@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 pedrotoliveira
  *
  * This program is free software; you can redistribute it and/or
@@ -42,18 +42,22 @@ public class LogDataHolder implements LogData {
         this.splunkLoggerDelegate = splunkLoggerDelegate;
     }
 
+    @Override
     public AsLevel asInfo() {
         return new AsLevelBuilder(logData, fileLoggerDelegate, splunkLoggerDelegate).asInfo();
     }
 
+    @Override
     public AsLevel asWarn() {
         return new AsLevelBuilder(logData, fileLoggerDelegate, splunkLoggerDelegate).asWarn();
     }
 
+    @Override
     public AsLevel asError() {
         return new AsLevelBuilder(logData, fileLoggerDelegate, splunkLoggerDelegate).asError();
     }
 
+    @Override
     public AsLevel asDebug() {
         return new AsLevelBuilder(logData, fileLoggerDelegate, splunkLoggerDelegate).asDebug();
     }
