@@ -24,7 +24,7 @@
     </properties>
 
     <scm>
-        <url>https://github.com/pedrotoliveira/ppm-logging.git</url>
+        <url>git@github.com:pedrotoliveira/ppm-commons.git</url>
         <connection>scm:git:ssh://git@github.com/pedrotoliveira/ppm-commons.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/pedrotoliveira/ppm-commons.git</developerConnection>
         <tag>ppm-logging-1.0.1</tag>
