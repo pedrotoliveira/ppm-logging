@@ -30,7 +30,7 @@ public final class LoggerService implements FluentLogger {
 
     private LoggerService(Class<?> clazz) {
         Objects.requireNonNull(clazz, "Class cannot be null.");
-        this.holder = new LoggerHolder(clazz);
+        holder = new LoggerHolder(clazz);
     }
 
     /**

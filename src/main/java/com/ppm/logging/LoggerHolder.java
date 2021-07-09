@@ -36,9 +36,9 @@ public class LoggerHolder implements LogOperations {
      * @param clazz
      */
     public LoggerHolder(final Class<?> clazz) {
-        this.consoleLoggerDelegate = ConsoleLoggerDelegate.create(clazz);
-        this.fileLoggerDelegate = FileLoggerDelegate.create(clazz);
-        this.remoteLoggerDelegate = RemoteLoggerDelegate.create(clazz);
+        consoleLoggerDelegate = ConsoleLoggerDelegate.create(clazz);
+        fileLoggerDelegate = FileLoggerDelegate.create(clazz);
+        remoteLoggerDelegate = RemoteLoggerDelegate.create(clazz);
     }
 
     /**
