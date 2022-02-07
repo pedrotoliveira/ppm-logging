@@ -27,11 +27,13 @@ import org.apache.logging.log4j.core.appender.ConsoleAppender;
 import org.apache.logging.log4j.core.config.Configuration;
 import org.apache.logging.log4j.core.config.ConfigurationFactory;
 import org.apache.logging.log4j.core.config.ConfigurationSource;
+import org.apache.logging.log4j.core.config.Order;
 import org.apache.logging.log4j.core.config.builder.api.AppenderComponentBuilder;
 import org.apache.logging.log4j.core.config.builder.api.ConfigurationBuilder;
 import org.apache.logging.log4j.core.config.builder.api.FilterComponentBuilder;
 import org.apache.logging.log4j.core.config.builder.api.RootLoggerComponentBuilder;
 import org.apache.logging.log4j.core.config.builder.impl.BuiltConfiguration;
+import org.apache.logging.log4j.core.config.plugins.Plugin;
 
 /**
  * The PPM Logger Configuration Factory<br/>
@@ -62,6 +64,8 @@ import org.apache.logging.log4j.core.config.builder.impl.BuiltConfiguration;
  * @author pedrotoliveira
  * @see <a href="https://logging.apache.org/log4j/2.x/manual/customconfig.html">log4j/2.x/manual/customconfig.html</a>
  */
+//@Plugin(name = "DefaultConfigurationFactory", category = "ConfigurationFactory")
+//@Order(5)
 public class DefaultConfigurationFactory extends ConfigurationFactory {
 
     /**
@@ -71,6 +75,10 @@ public class DefaultConfigurationFactory extends ConfigurationFactory {
     public static final String[] CONFIG_FILES_TYPES = new String[]{"*"};
 
     private final PropertiesLoader propertiesLoader;
+
+    public DefaultConfigurationFactory() {
+        this.propertiesLoader = new DefaultPropertiesLoader();
+    }
 
     public DefaultConfigurationFactory(PropertiesLoader propertiesLoader) {
         this.propertiesLoader = propertiesLoader;
@@ -89,7 +97,7 @@ public class DefaultConfigurationFactory extends ConfigurationFactory {
     @Override
     public Configuration getConfiguration(LoggerContext loggerContext, String name, URI configLocation) {
         PropertiesLoader properties = getPropertiesLoader();
-        Level rootLevel = Level.FATAL;
+        Level rootLevel = Level.DEBUG;
 
         ConfigurationBuilder<BuiltConfiguration> configBuilder = newConfigurationBuilder();
         configBuilder.setConfigurationName(name);
@@ -99,8 +107,11 @@ public class DefaultConfigurationFactory extends ConfigurationFactory {
         AppenderComponentBuilder consoleAppenderBuilder = configBuilder.newAppender("Console", ConsoleAppender.PLUGIN_NAME);
         consoleAppenderBuilder.addAttribute("target", ConsoleAppender.Target.SYSTEM_OUT);
 
-        RootLoggerComponentBuilder rootLoggerBuilder = configBuilder.newRootLogger(rootLevel);
+        RootLoggerComponentBuilder rootLoggerBuilder = configBuilder
+                .newRootLogger(rootLevel)
+                .addComponent(consoleAppenderBuilder);
 
+        configBuilder.add(rootLoggerBuilder);
         return configBuilder.build();
     }
 

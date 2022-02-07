@@ -19,8 +19,12 @@ package com.ppm.logging;
 
 import java.util.Map;
 
+import com.ppm.logging.configuration.DefaultConfigurationFactory;
+import com.ppm.logging.configuration.DefaultPropertiesLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.LoggerContext;
+import org.apache.logging.log4j.core.config.Configuration;
 
 /**
  *
@@ -30,13 +34,8 @@ public class ConsoleLoggerDelegate implements ConsoleLogger {
 
     private final Logger logger;
 
-    private ConsoleLoggerDelegate(final Logger logger) {
+    public ConsoleLoggerDelegate(final Logger logger) {
         this.logger = logger;
-    }
-
-    static ConsoleLoggerDelegate create(Class<?> clazz) {
-        Logger consoleLogger = LogManager.getLogger(clazz.getName());
-        return new ConsoleLoggerDelegate(consoleLogger);
     }
 
     @Override

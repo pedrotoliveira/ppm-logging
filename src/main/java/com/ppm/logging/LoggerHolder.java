@@ -17,6 +17,10 @@
  */
 package com.ppm.logging;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.spi.LoggerContext;
+
 import java.util.Map;
 
 /**
@@ -30,15 +34,17 @@ public class LoggerHolder implements LogOperations {
     private final ConsoleLoggerDelegate consoleLoggerDelegate;
     private final FileLoggerDelegate fileLoggerDelegate;
     private final RemoteLoggerDelegate remoteLoggerDelegate;
+    private final Logger logger;
 
     /**
      *
      * @param clazz
      */
     public LoggerHolder(final Class<?> clazz) {
-        consoleLoggerDelegate = ConsoleLoggerDelegate.create(clazz);
-        fileLoggerDelegate = FileLoggerDelegate.create(clazz);
-        remoteLoggerDelegate = RemoteLoggerDelegate.create(clazz);
+        logger = LogManager.getLogger(clazz);
+        consoleLoggerDelegate = new ConsoleLoggerDelegate(logger);
+        fileLoggerDelegate = new FileLoggerDelegate(logger);
+        remoteLoggerDelegate = new RemoteLoggerDelegate(logger);
     }
 
     /**
@@ -64,29 +70,25 @@ public class LoggerHolder implements LogOperations {
 
     @Override
     public LogOperations info(final Object message) {
-        fileLoggerDelegate.info(message);
-        remoteLoggerDelegate.info(message);
+        logger.info(message);
         return this;
     }
 
     @Override
     public LogOperations warn(final Object message) {
-        fileLoggerDelegate.warn(message);
-        remoteLoggerDelegate.warn(message);
+        logger.warn(message);
         return this;
     }
 
     @Override
     public LogOperations error(final Object message) {
-        fileLoggerDelegate.error(message);
-        remoteLoggerDelegate.error(message);
+        logger.error(message);
         return this;
     }
 
     @Override
     public LogOperations debug(final Object message) {
-        fileLoggerDelegate.debug(message);
-        remoteLoggerDelegate.debug(message);
+        logger.debug(message);
         return this;
     }
 

@@ -36,17 +36,6 @@ public final class FileLoggerDelegate implements FileLogger {
         this.logger = logger;
     }
 
-    /**
-     *
-     * @param logger
-     * @return The FileLoggerDelegate
-     */
-    static FileLoggerDelegate create(final Class<?> clazz) {
-        String loggerName = FILE_LOGGER_PREFIX + clazz.getName();
-        Logger fileLogger = LogManager.getLogger(loggerName);
-        return new FileLoggerDelegate(fileLogger);
-    }
-
     @Override
     public FileLogger info(Object message) {
         logger.info(message);
