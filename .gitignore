@@ -24,6 +24,7 @@ nb*
 .nb-gradle*
 .nb-gradle/*
 *.nb-gradle/*
+.DS_Store
 
 /.idea/*
 *.iml

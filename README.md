@@ -12,7 +12,6 @@ https://travis-ci.org/pedrotoliveira/ppm-logging
 ## What is PPM Logging
 - A Simplified Facade API to Log4J2;
 - A Fluent Log API;
-- A Reactive Log Method;
 - A Convention Configuration Method to Log4J.
 
 ## What PPM Logging is NOT.

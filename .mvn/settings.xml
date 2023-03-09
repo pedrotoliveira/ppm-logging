@@ -1,0 +1,34 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
+    
+    <localRepository>${user.home}/.m2/repository</localRepository>
+    <interactiveMode>true</interactiveMode>
+    <usePluginRegistry>false</usePluginRegistry>
+    <offline>false</offline>
+    <servers>
+        <server>
+            <id>ossrh</id>
+            <username>pedrotoliveira</username>
+            <password>odin1821</password>
+        </server>
+        <server>
+            <id>github.com</id>
+            <privateKey>~/.ssh/id_rsa</privateKey>
+            <passphrase>odin1821</passphrase>
+        </server>
+    </servers>
+    <profiles>
+        <profile>
+            <id>ossrh</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <gpg.executable>/usr/local/bin/gpg</gpg.executable>
+                <gpg.passphrase>odin1821</gpg.passphrase>
+            </properties>
+        </profile>
+    </profiles>
+</settings>
