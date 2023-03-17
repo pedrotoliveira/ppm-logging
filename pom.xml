@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.ppm</groupId>
     <artifactId>ppm-logging</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <name>PPM Logging</name>
@@ -27,7 +27,7 @@
         <url>git@github.com:pedrotoliveira/ppm-logging.git</url>
         <connection>scm:git:ssh://git@github.com/pedrotoliveira/ppm-logging.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/pedrotoliveira/ppm-logging.git</developerConnection>
-        <tag>ppm-logging-1.0.1</tag>
+        <tag>ppm-logging-1.0.2</tag>
     </scm>
 
     <developers>
