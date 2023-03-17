@@ -36,30 +36,23 @@ import org.apache.logging.log4j.core.config.builder.impl.BuiltConfiguration;
 import org.apache.logging.log4j.core.config.plugins.Plugin;
 
 /**
- * The PPM Logger Configuration Factory<br/>
+ * The PPM Logger Configuration Factory
  *
- * <p>
  * During initialization, Log4j 2 will search for available ConfigurationFactories and then select the one to use. The
  * selected ConfigurationFactory creates the Configuration that Log4j will use. Here is how Log4j finds the available
  * ConfigurationFactories:
- * <ol>
- * <li>
+ *
  * A system property named "log4j.configurationFactory" can be set with the name of the ConfigurationFactory to be used.
- * </li>
- * <li>
+ *
  * ConfigurationFactory.setConfigurationFactory(ConfigurationFactory) can be called with the instance of the
  * ConfigurationFactory to be used. This must be called before any other calls to Log4j.
- * </li>
- * <li>
+ *
  * A ConfigurationFactory implementation can be added to the classpath and configured as a plugin in the
  * "ConfigurationFactory" category. The Order annotation can be used to specify the relative priority when multiple
  * applicable ConfigurationFactories are found.
- * </li>
- * </ol>
  * ConfigurationFactories have the concept of "supported types", which basically maps to the file extension of the
  * configuration file that the ConfigurationFactory can handle. If a configuration file location is specified,
  * ConfigurationFactories whose supported type does not include "*" or the matching file extension will not be used.
- * </p>
  *
  * @author pedrotoliveira
  * @see <a href="https://logging.apache.org/log4j/2.x/manual/customconfig.html">log4j/2.x/manual/customconfig.html</a>

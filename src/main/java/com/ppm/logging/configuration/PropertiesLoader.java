@@ -30,9 +30,8 @@ import org.apache.logging.log4j.Level;
 public interface PropertiesLoader {
 
     /**
-     * Get Root Log Level<br/><br/>
-     * It can be: <b>ALL TRACE DEBUG INFO WARN ERROR FATAL OFF</b>
-     *
+     * Get Root Log Level
+     * It can be: ALL TRACE DEBUG INFO WARN ERROR FATAL OF
      * - Custom log levels will be disabled at this project moment.
      *
      * @return an Event Level.
@@ -48,9 +47,8 @@ public interface PropertiesLoader {
     Boolean isConsoleEnabled();
 
     /**
-     * Get Console Log Level<br/><br/>
+     * Get Console Log Level
      * It can be: <b>ALL TRACE DEBUG INFO WARN ERROR FATAL OFF</b>
-     *
      * - Custom log levels will be disabled at this project moment.
      *
      * @return an Event Level.
@@ -62,11 +60,9 @@ public interface PropertiesLoader {
     /**
      * Get a List of Packages to configure the Log Hierarchy.
      * <p>
-     * By default The logger engine will consider the same pattern from log4j. <br/>
+     * By default The logger engine will consider the same pattern from log4j.
      * For example, the LoggerConfig named <b>"com.foo"</b> is a parent of the LoggerConfig named <b>"com.foo.Bar"</b>.
      * Similarly,<b>"java"</b> is a parent of <b>"java.util"</b> and an ancestor of <b>"java.util.Vector".</b>
-     * <br/>
-     *
      * This naming scheme should be familiar to most developers.
      * </p>
      *
@@ -121,7 +117,7 @@ public interface PropertiesLoader {
     Boolean isFileEnabled();
 
     /**
-     * Get File Log Level<br/><br/>
+     * Get File Log Level
      * It can be: <b>ALL TRACE DEBUG INFO WARN ERROR FATAL OFF</b>
      *
      * - Custom log levels will be disabled at this project moment.
@@ -135,10 +131,9 @@ public interface PropertiesLoader {
     /**
      * Get a List of Packages to configure the Log Hierarchy.
      * <p>
-     * By default The logger engine will consider the same pattern from log4j. <br/>
+     * By default The logger engine will consider the same pattern from log4j.
      * For example, the LoggerConfig named <b>"com.foo"</b> is a parent of the LoggerConfig named <b>"com.foo.Bar"</b>.
      * Similarly,<b>"java"</b> is a parent of <b>"java.util"</b> and an ancestor of <b>"java.util.Vector".</b>
-     * <br/>
      *
      * This naming scheme should be familiar to most developers.
      * </p>
@@ -204,7 +199,8 @@ public interface PropertiesLoader {
     Boolean isRemoteEnabled();
 
     /**
-     * Get Remote Log Level<br/><br/>
+     * Get Remote Log Level
+     *
      * It can be: <b>ALL TRACE DEBUG INFO WARN ERROR FATAL OFF</b>
      *
      * - Custom log levels will be disabled at this project moment.
@@ -217,14 +213,13 @@ public interface PropertiesLoader {
 
     /**
      * Get a List of Packages to configure the Log Hierarchy.
-     * <p>
-     * By default The logger engine will consider the same pattern from log4j. <br/>
+     *
+     * By default The logger engine will consider the same pattern from log4j.
      * For example, the LoggerConfig named <b>"com.foo"</b> is a parent of the LoggerConfig named <b>"com.foo.Bar"</b>.
      * Similarly,<b>"java"</b> is a parent of <b>"java.util"</b> and an ancestor of <b>"java.util.Vector".</b>
-     * <br/>
+     *
      *
      * This naming scheme should be familiar to most developers.
-     * </p>
      *
      * @return a List of String representing packages Namespaces
      * @see

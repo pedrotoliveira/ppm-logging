@@ -31,12 +31,6 @@ public class AsLevelBuilder implements AsLevel {
     private final FileLogger fileLoggerDelegate;
     private final RemoteLogger remoteLoggerDelegate;
 
-    /**
-     *
-     * @param logData
-     * @param fileLoggerDelegate
-     * @param remoteLoggerDelegate
-     */
     public AsLevelBuilder(Map<String, Object> logData, FileLogger fileLoggerDelegate,
             RemoteLogger remoteLoggerDelegate) {
         super();
@@ -45,11 +39,6 @@ public class AsLevelBuilder implements AsLevel {
         this.remoteLoggerDelegate = remoteLoggerDelegate;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see com.ppm..util.logging.AsLevel#asInfo()
-     */
     @Override
     public AsLevel asInfo() {
         fileLoggerDelegate.logData(logData).asInfo();
@@ -57,11 +46,6 @@ public class AsLevelBuilder implements AsLevel {
         return this;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see com.ppm..util.logging.AsLevel#asWarn()
-     */
     @Override
     public AsLevel asWarn() {
         fileLoggerDelegate.logData(logData).asWarn();
@@ -69,11 +53,6 @@ public class AsLevelBuilder implements AsLevel {
         return this;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see com.ppm..util.logging.AsLevel#asError()
-     */
     @Override
     public AsLevel asError() {
         fileLoggerDelegate.logData(logData).asError();
@@ -81,11 +60,6 @@ public class AsLevelBuilder implements AsLevel {
         return this;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see com.ppm..util.logging.AsLevel#asDebug()
-     */
     @Override
     public AsLevel asDebug() {
         fileLoggerDelegate.logData(logData).asDebug();
